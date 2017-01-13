@@ -1,0 +1,72 @@
+#visit{
+	background:#59B2DC;
+	overflow:hidden;
+	img{
+		
+		margin-top: 55px;
+		z-index: 9;
+		position: relative;
+	}
+	.col-md-5{
+		z-index: 9;
+		background:white;
+		border-radius:15px;
+		box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);
+		padding:30px;
+		margin-top:90px;
+		margin-bottom: 90px;
+
+		h2{
+			font-family: 'American';
+			font-size:46px;
+		}
+		.text{
+			color:#7E6767;
+			font-size: 16px;
+			font-family: 'Comfortaa';
+		}
+		.contactButton{
+			color:white;
+			border-radius:355px 45px 225px 75px/15px 225px 15px 255px;
+			font-family: 'Comfortaa';
+			border:none;
+			background:#D12881;
+			font-size: 20px;
+			padding:10px;
+			transition: all .2s ease;
+			&:hover{
+				background:#EC9600;
+			}
+		}
+	}
+	.cloudSet{
+		transform:translateX(-1000px);
+		animation: cloud 60s linear 0s infinite normal;
+		z-index: 5;
+		.cloud{
+			width: 150px;
+			z-index: 0;
+			img{
+				height: 150px;
+				position: absolute;
+				z-index: 0;
+			}
+		}
+	}
+	
+
+}
+
+@keyframes cloud{
+	100%{transform:translateX(1000px)}
+}
+
+
+@media(max-width:995px){
+	#visit{
+		img{
+			display: none;
+			
+		}
+	}
+}

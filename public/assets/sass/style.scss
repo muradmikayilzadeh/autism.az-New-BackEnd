@@ -1,0 +1,55 @@
+//Variables
+$menuColor:#EC9600;
+$headingColor:#D12881;
+::selection{
+	background:$menuColor;
+	color:white;
+}
+@import 'partials/index/common';
+@import 'partials/index/menu';
+@import 'partials/index/slider';
+@import 'partials/index/autism';
+@import 'partials/index/visit';
+@import 'partials/index/about';
+@import 'partials/index/team';
+@import 'partials/index/activities';
+@import 'partials/index/games';
+@import 'partials/index/blog';
+@import 'partials/index/info';
+@import 'partials/index/contact';
+@import 'partials/index/footer';
+
+
+@font-face {
+	font-family: 'American';
+	src: url('../vendor/fonts/AmericanCaptain.eot');
+	src: url('../vendor/fonts/AmericanCaptain.eot?#iefix') format('embedded-opentype'),
+		url('../vendor/fonts/AmericanCaptain.woff') format('woff'),
+		url('../vendor/fonts/AmericanCaptain.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../vendor/fonts/Comfortaa-Light.eot');
+	src: url('../vendor/fonts/Comfortaa-Light.eot?#iefix') format('embedded-opentype'),
+		url('../vendor/fonts/Comfortaa-Light.woff') format('woff'),
+		url('../vendor/fonts/Comfortaa-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+#deco-clouds{
+	fill:#34327C;
+	background:#F3F0CF;
+	border:none;
+}
+
+@media(max-width:995px){
+	svg{
+		display: none;
+	}
+}
+
+

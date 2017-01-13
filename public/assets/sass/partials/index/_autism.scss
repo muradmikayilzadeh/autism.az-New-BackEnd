@@ -1,0 +1,72 @@
+#autism{
+	background:#F3F0CF;
+	.col-md-7{
+		h3{
+			font-family: 'American';
+			font-size: 46px;
+
+		}
+		p{
+			font-family: 'Comfortaa';
+			font-size: 16px;
+			color:#7E6767;
+		}
+	}
+	img{
+		max-height: 400px;
+	}
+
+
+	.autism2{
+		margin-top: 20px;
+		margin-bottom:100px;
+		.content{
+			border-radius:10px;
+			background:white;
+			transition: all .6s ease;
+			&:hover{
+				transform: translateY(-20px);
+				box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);
+				.heading2{
+					background:#EC9600;
+				}
+			}
+			img{
+				box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);
+				max-height: 300px;
+				margin:auto;
+			}
+			.heading2{
+				height: 65px;
+				max-width: 200px;
+				color:white;
+				text-align: center;
+				font-family: 'American';
+				font-size:35px;
+				border-radius:15px;
+				background:#34327C;
+				line-height: 65px;
+				margin:auto;
+				transition: all .4s ease;
+			}
+
+			.text{
+				color:#7E6767;
+				font-size: 16px;
+				font-family: 'Comfortaa';
+				padding: 15px 15px;
+				transition: all .4s ease;
+			}
+		}	
+	}
+}
+
+@media(max-width:995px){
+	#autism{
+		.col-md-5{
+			img{
+				margin:auto;
+			}
+		}		
+	}
+}

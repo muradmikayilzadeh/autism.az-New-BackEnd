@@ -1,0 +1,35 @@
+.heading{
+	margin:auto;
+	margin-top:70px;
+	margin-bottom:70px;
+	width:385px;
+	height:115px;
+	background:$headingColor;
+	border-radius:100%;
+	box-sizing:border-box;
+	color:white;
+	text-align:center;
+	display:block;
+	transform:rotate(3deg);
+	h2{
+		margin:0;
+		padding:0;
+		display: inline-block;
+		font-weight: 800px;
+		line-height: 115px;
+		font-size: 46px;
+		font-family: 'American';
+	}
+}
+
+
+@media(max-width:480px){
+	.heading{
+		width:270px;
+		height:100px;
+		h2{
+			margin-top:-10px;
+			font-size: 30px;
+		}
+	}
+}

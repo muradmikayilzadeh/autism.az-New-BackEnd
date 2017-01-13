@@ -1,0 +1,20 @@
+#games{
+	background:#F3F0CF;
+	.img{
+		width: 335px;
+		display: inline-block;
+		border-radius: 100%;
+		border:none;
+		overflow: hidden;
+		transition: all .2s ease;
+		cursor:pointer;
+		
+		img{
+			max-height: 335px;
+			border: 10px solid transparent;
+			&:hover{
+				border: 10px solid #34327C;
+			}
+		}
+	}
+}

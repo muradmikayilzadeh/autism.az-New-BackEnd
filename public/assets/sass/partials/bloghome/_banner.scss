@@ -1,0 +1,48 @@
+#banner{
+	background:url('../images/content/bloghome/banner.jpg');
+	background-size:cover;
+	height:450px;
+	h1{
+		font-weight: 600px;
+		color:white;
+		text-align: center;
+		font-family: 'American';
+		margin-top:180px;
+		font-size: 60px;
+	}
+	.pages{
+		text-align: center;
+		background:#34327C;
+		font-family: 'Comfortaa';
+		max-width: 250px;
+		border-radius: 25px;
+		margin:auto;
+		font-size: 16px;
+		a{
+			display: inline-block;
+			padding-top:10px;
+			color:white;
+			transition: all .4s ease;
+			&:hover{
+				color:#C72C7E;
+				text-decoration: none;
+
+			}
+		}
+		p{
+			display: inline-block;
+			color:#EC921F;
+		}
+		span{
+			color:white;
+		}
+
+	}
+
+	#deco{
+		fill:white;
+		background:transparent;
+		border:none;
+		margin-top: 55px;
+	}
+}
