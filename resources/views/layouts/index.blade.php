@@ -13,6 +13,32 @@
 <body>
 <div class="container-fluid">
 	<div class="row">
+		<div class="login">
+			<i class="fa fa-user"></i>
+		</div>
+
+		<script>
+			$('.login')
+			.on('click',function(event) {
+				$('.loginPanel').css('display', 'block');
+			});
+		</script>
+
+		<div class="register">
+			<i class="fa fa-plus"></i>
+		</div>
+
+				<div class="panel loginPanel col-md-3">
+					<img src="assets/images/logo2.png" class="img img-responsive">
+			
+					<form action="">
+						<input type="text" class="text" placeholder="E-poçt ünvanınız">
+						<input type="text" class="text" placeholder="Şifrəniz">
+
+						<input type="submit" value="Daxil ol" class="submit">
+					</form>
+				</div>
+
 		<section id="menu" class="col-md-12 col-sm-12 col-xs-12">
 			<div class="container text-center">
 				<ul class="float-left col-md-5">

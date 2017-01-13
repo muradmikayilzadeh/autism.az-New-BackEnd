@@ -40,16 +40,68 @@ $headingColor:#D12881;
 	font-style: normal;
 }
 
-#deco-clouds{
-	fill:#34327C;
-	background:#F3F0CF;
-	border:none;
+.login,.register{
+	color:white;
+	font-size: 20px;
+	padding:5px;
+	position: fixed;
+	z-index: 999;
+	top:200px;
+	background: red;
+	transform: translateX(-15px);
+	transition: all .3s ease;
 }
-
-@media(max-width:995px){
-	svg{
-		display: none;
+	.login:hover,.register:hover{
+		transform: translateX(0px);
+		cursor: pointer;
 	}
+.register{
+	background: #34327C;
+	top:240px;
 }
+	.loginPanel{
+		background:#34327C; 
+		display: none;
+		position: fixed;
+		top:200px;
+		z-index: 1000;
+		text-align:center;
+		transform: translateX(50px);
+		img{
+			height: 150px;
+			padding:20px;
+			margin:auto;
+		}
+		.text:first-child{
+			margin-top: 0;
+		}
+		.text{
+			border-radius: 15px;
+			border:1px solid #CECECE;
+			width: 100%;
+			margin-top: 15px;
+			font-size: 17px;
+			font-family: "Comfortaa";
+			padding:5px;
+		}
+
+		.submit{
+			color:white;
+			cursor: pointer;
+			border-radius:355px 45px 225px 75px/15px 225px 15px 255px;
+			font-family: 'Comfortaa';
+			border:none;
+			background:#D12881;
+			font-size: 17px;
+			padding:10px;
+			margin-top: 15px;
+			margin-bottom:15px;
+			float: right;
+			transition: all .2s ease;
+			&:hover{
+				background:#EC9600;
+			}
+		}
+	}
 
 
