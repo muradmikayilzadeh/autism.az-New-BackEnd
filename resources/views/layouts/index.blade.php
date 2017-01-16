@@ -25,9 +25,10 @@
 					<p class="fa fa-close pull-right"></p>
 					<img src="assets/images/logo2.png" class="img img-responsive">
 			
-					<form action="">
-						<input type="text" class="text" placeholder="E-poçt ünvanınız">
-						<input type="text" class="text" placeholder="Şifrəniz">
+					<form action="{{url('/login')}}" method="post">
+						{{ csrf_field() }}
+						<input name="email" type="text" class="text" placeholder="E-poçt ünvanınız">
+						<input name="password" type="password" class="text" placeholder="Şifrəniz">
 
 						<input type="submit" value="Daxil ol" class="submit">
 					</form>
@@ -57,12 +58,22 @@
 		<div class="pageMsg col-md-12 col-sm-12 col-xs-12">
 			<div class="row">
 				<marquee behavior="" direction="">
-					<b>Xoş gəlmişsiniz!</b>
+					@if(!Session::get('success') && !Session::get('unsuccess') &&!Session::get('true') && !Session::get('false'))
+						<b>Xoş gəlmişsiniz!</b>
+					@endif
 					@if ($message = Session::get('success'))
 		                 <b>{{ $message }}</b>
 		            @endif
 
 		            @if ($message = Session::get('unsuccess'))
+		                 <b>{{ $message }}</b>
+		            @endif
+
+		             @if ($message = Session::get('true'))
+		                 <b>{{ $message }}</b>
+		            @endif
+
+		             @if ($message = Session::get('false'))
 		                 <b>{{ $message }}</b>
 		            @endif
 				</marquee>

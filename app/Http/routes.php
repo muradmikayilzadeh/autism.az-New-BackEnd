@@ -25,4 +25,5 @@ Route::get('/blogpost', function () {
 
 // Register and login-----------------------------------------------
 Route::post('/register','userController@register');
+Route::post('/login','userController@login');
 

@@ -37,4 +37,18 @@ class userController extends Controller
     		return back()->with('unsuccess','E-poçt ünvanı ilə artıq qeydiyyatdan keçilib! Qeydiyyat uğursuzdur.');
     	}
     }
+
+    public function login(Request $request)
+    {
+
+    	$user=Istifadeci::where([['email',$request->email],['password',$request->password]])->first();
+    	if(!is_null($user)){
+
+    		$_SESSION['user']=$user->id;
+    		return back()->with('true','Portala uğurla daxil oldunuz!');
+    		
+    	}else{
+    		return back()->with('false','E-poçt və ya şifrə səhvdir!');
+    	}
+    }
 }
