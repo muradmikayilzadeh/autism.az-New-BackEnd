@@ -22,3 +22,7 @@ Route::get('/blogpost', function () {
     return view('pages.blogpost');
 });
 
+
+// Register and login-----------------------------------------------
+Route::post('/register','userController@register');
+

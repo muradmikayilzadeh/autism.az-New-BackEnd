@@ -40,6 +40,17 @@ $headingColor:#D12881;
 	font-style: normal;
 }
 
+.pageMsg{
+	background:#34327C;
+	color:white;
+	font-size:16px;
+	padding-top:3px;
+	height:30px;
+	position: fixed;
+	z-index:999;
+	font-family:'Comfortaa';
+}
+
 .login,.register{
 	color:white;
 	font-size: 20px;
@@ -59,7 +70,7 @@ $headingColor:#D12881;
 	background: #34327C;
 	top:240px;
 }
-	.loginPanel{
+	.loginPanel,.registerPanel{
 		background:#34327C; 
 		display: none;
 		position: fixed;
@@ -102,6 +113,18 @@ $headingColor:#D12881;
 				background:#EC9600;
 			}
 		}
+
+		p{
+			color:white;
+			padding-top:15px;
+			z-index: 998;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+	.registerPanel{
+		top:150px;
 	}
 
 

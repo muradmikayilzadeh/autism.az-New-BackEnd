@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHekimlersTable extends Migration
+class CreateIstifadecisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateHekimlersTable extends Migration
      */
     public function up()
     {
-        Schema::create('hekimlers', function (Blueprint $table) {
+        Schema::create('istifadecis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',255);
-            $table->string('surname',255);
-            $table->string('haqqinda',255);
-            $table->string('email',255);
+            $table->string('name');
+            $table->string('surname');
+            $table->string('email')->unique();
+            $table->string('avatar');
+            $table->integer('gender');
             $table->string('password');
-            $table->string('avatar')->default('images/avatars/default/doctor.png');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateHekimlersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hekimlers');
+        Schema::drop('istifadecis');
     }
 }

@@ -17,18 +17,12 @@
 			<i class="fa fa-user"></i>
 		</div>
 
-		<script>
-			$('.login')
-			.on('click',function(event) {
-				$('.loginPanel').css('display', 'block');
-			});
-		</script>
-
 		<div class="register">
 			<i class="fa fa-plus"></i>
 		</div>
 
 				<div class="panel loginPanel col-md-3">
+					<p class="fa fa-close pull-right"></p>
 					<img src="assets/images/logo2.png" class="img img-responsive">
 			
 					<form action="">
@@ -39,6 +33,41 @@
 					</form>
 				</div>
 
+
+				<div class="panel registerPanel col-md-3">
+					<p class="fa fa-close pull-right"></p>
+					<img src="assets/images/logo2.png" class="img img-responsive">
+			
+					<form action="{{url('/register')}}" method="post">
+						{{ csrf_field() }}
+						<input name="name" type="text" class="text" placeholder="Adınız">
+						<input name="surname" type="text" class="text" placeholder="Soyadınız">
+						<input name="email" type="text" class="text" placeholder="E-poçt ünvanınız">
+						<input name="password" type="password" class="text" placeholder="Şifrəniz">
+
+						<select name="gender" class="text">
+							<option value="0">Kişi</option>
+							<option value="1">Qadın</option>
+						</select>
+						
+						<input type="submit" value="Qeydiyyatdan keç" class="submit">
+					</form>
+				</div>
+
+		<div class="pageMsg col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<marquee behavior="" direction="">
+					<b>Xoş gəlmişsiniz!</b>
+					@if ($message = Session::get('success'))
+		                 <b>{{ $message }}</b>
+		            @endif
+
+		            @if ($message = Session::get('unsuccess'))
+		                 <b>{{ $message }}</b>
+		            @endif
+				</marquee>
+			</div>
+		</div>
 		<section id="menu" class="col-md-12 col-sm-12 col-xs-12">
 			<div class="container text-center">
 				<ul class="float-left col-md-5">
@@ -137,5 +166,25 @@
 			$('html, body').animate({scrollTop: $(target).offset().top}, 1000);
 		});   
 
+	});
+</script>
+
+
+<script>
+	$('.login')
+	.on('click',function(event) {
+		$('.loginPanel').css('display', 'block');
+	});
+
+
+	$('.register')
+	.on('click',function(event) {
+		$('.registerPanel').css('display', 'block');
+	});
+
+	$('.fa-close')
+	.on('click',function(event) {
+		$('.loginPanel').css('display', 'none');
+		$('.registerPanel').css('display', 'none');
 	});
 </script>
