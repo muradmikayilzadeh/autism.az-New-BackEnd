@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+session_start();
 Route::get('/', function () {
     return view('pages.index');
 });
@@ -26,4 +26,5 @@ Route::get('/blogpost', function () {
 // Register and login-----------------------------------------------
 Route::post('/register','userController@register');
 Route::post('/login','userController@login');
+Route::get('/logout','userController@logout');
 

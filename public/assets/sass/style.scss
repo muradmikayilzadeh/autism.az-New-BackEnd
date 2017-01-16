@@ -51,7 +51,7 @@ $headingColor:#D12881;
 	font-family:'Comfortaa';
 }
 
-.login,.register{
+.login,.register,.profile,.logout{
 	color:white;
 	font-size: 20px;
 	padding:5px;
@@ -62,11 +62,11 @@ $headingColor:#D12881;
 	transform: translateX(-15px);
 	transition: all .3s ease;
 }
-	.login:hover,.register:hover{
+	.login:hover,.register:hover,.profile:hover,.logout:hover{
 		transform: translateX(0px);
 		cursor: pointer;
 	}
-.register{
+.register,.logout{
 	background: #34327C;
 	top:240px;
 }
@@ -125,6 +125,12 @@ $headingColor:#D12881;
 	}
 	.registerPanel{
 		top:150px;
+	}
+
+	.profile,.logout{
+		&:hover{
+			color:white;
+		}
 	}
 
 

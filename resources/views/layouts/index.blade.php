@@ -13,13 +13,27 @@
 <body>
 <div class="container-fluid">
 	<div class="row">
-		<div class="login">
-			<i class="fa fa-user"></i>
-		</div>
+		@if(!isset($_SESSION['user']))
 
-		<div class="register">
-			<i class="fa fa-plus"></i>
-		</div>
+			<div class="login">
+				<i class="fa fa-sign-in"></i>
+			</div>
+
+			<div class="register">
+				<i class="fa fa-plus"></i>
+			</div>
+			
+		@endif
+
+		@if(isset($_SESSION['user']))
+			<div class="profile">
+				<i class="fa fa-user"></i>
+			</div>
+
+			<a href="{{url('/logout')}}" class="logout">
+				<i class="fa fa-sign-out"></i>
+			</a>
+		@endif
 
 				<div class="panel loginPanel col-md-3">
 					<p class="fa fa-close pull-right"></p>

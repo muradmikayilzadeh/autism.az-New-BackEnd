@@ -32,7 +32,7 @@ class userController extends Controller
 	    		$new->avatar='assets/images/avatar/female.jpg';
 	    	}
 	    	$new->save();
-	    	return back()->with('success','Uğurla qeydiyyatdan keçdiniz! Solda yerləşən istifadəçi simgəsinə çıqqıldadaraq sistemə daxil ola bilərsiniz!');
+	    	return back()->with('success','Uğurla qeydiyyatdan keçdiniz! Solda yerləşən qırmızı simgəyə çıqqıldadaraq sistemə daxil ola bilərsiniz!');
     	}else{
     		return back()->with('unsuccess','E-poçt ünvanı ilə artıq qeydiyyatdan keçilib! Qeydiyyat uğursuzdur.');
     	}
@@ -42,13 +42,17 @@ class userController extends Controller
     {
 
     	$user=Istifadeci::where([['email',$request->email],['password',$request->password]])->first();
-    	if(!is_null($user)){
-
-    		$_SESSION['user']=$user->id;
-    		return back()->with('true','Portala uğurla daxil oldunuz!');
-    		
+    	if(is_null($user)){
+            return back()->with('false','E-poçt və ya şifrə səhvdir!');
     	}else{
-    		return back()->with('false','E-poçt və ya şifrə səhvdir!');
+            $_SESSION['user']=$user->id;
+            return back()->with('true','Portala uğurla daxil oldunuz!');
     	}
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        return redirect('/');
     }
 }
