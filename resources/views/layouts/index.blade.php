@@ -26,9 +26,9 @@
 		@endif
 
 		@if(isset($_SESSION['user']))
-			<div class="profile">
+			<a href="{{url('/myprofile')}}" class="profile">
 				<i class="fa fa-user"></i>
-			</div>
+			</a>
 
 			<a href="{{url('/logout')}}" class="logout">
 				<i class="fa fa-sign-out"></i>
@@ -72,9 +72,7 @@
 		<div class="pageMsg col-md-12 col-sm-12 col-xs-12">
 			<div class="row">
 				<marquee behavior="" direction="">
-					@if(!Session::get('success') && !Session::get('unsuccess') &&!Session::get('true') && !Session::get('false'))
-						<b>Xoş gəlmişsiniz!</b>
-					@endif
+					
 					@if ($message = Session::get('success'))
 		                 <b>{{ $message }}</b>
 		            @endif
@@ -90,6 +88,15 @@
 		             @if ($message = Session::get('false'))
 		                 <b>{{ $message }}</b>
 		            @endif
+
+		            @if ($message = Session::get('changed'))
+		                 <b>{{ $message }}</b>
+		            @endif
+
+					@if(true)
+						<b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum modi eligendi sunt quaerat repellendus iure voluptas architecto dolores pariatur a, enim nobis atque facere sint odit aperiam, inventore non ipsam.</b>
+					@endif
+
 				</marquee>
 			</div>
 		</div>

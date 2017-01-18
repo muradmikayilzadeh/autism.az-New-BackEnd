@@ -22,9 +22,19 @@ Route::get('/blogpost', function () {
     return view('pages.blogpost');
 });
 
+Route::get('/myprofile', function () {
+    return view('pages.myprofile');
+});
+
 
 // Register and login-----------------------------------------------
 Route::post('/register','userController@register');
 Route::post('/login','userController@login');
 Route::get('/logout','userController@logout');
+
+
+if(isset($_SESSION['user'])){
+	Route::get('/myprofile','userController@myProfile');
+	Route::post('/changes','userController@saveChanges');
+}
 

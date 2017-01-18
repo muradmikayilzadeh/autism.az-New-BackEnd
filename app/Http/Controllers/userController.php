@@ -55,4 +55,38 @@ class userController extends Controller
         session_destroy();
         return redirect('/');
     }
+
+
+    public function myProfile()
+    {
+        $user=Istifadeci::find($_SESSION['user']);
+        return view('pages.myprofile',compact('user'));
+    }
+
+
+    public function saveChanges(Request $request)
+    {
+        $this->validate($request,[
+                'name'=>'required',
+                'surname'=>'required',
+                'password'=>'required',
+
+                ]);
+        $user=Istifadeci::find($_SESSION['user']);
+        $user->name=$request->name;
+        $user->surname=$request->surname;
+        $user->password=$request->password;    
+
+        if($request->hasFile('photo')){
+            $file=$request->file('photo');
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $file->move('assets/images/avatar',$filename);
+            $path='assets/images/avatar/'.$filename;
+            $user->avatar=$path;
+        }
+
+        $user->save();    
+
+        return back()->with('changed','Məlumatlarınız uğurla yeniləndi!');
+    }
 }
