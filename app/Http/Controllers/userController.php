@@ -25,7 +25,8 @@ class userController extends Controller
 	    	$new->surname=$request->surname;
 	    	$new->email=$request->email;
 	    	$new->password=$request->password;
-	    	$new->gender=$request->gender;
+            $new->gender=$request->gender;
+	    	$new->user_type='0';
 	    	if($request->gender==0){
 	    		$new->avatar='assets/images/avatar/male.jpg';
 	    	}else{

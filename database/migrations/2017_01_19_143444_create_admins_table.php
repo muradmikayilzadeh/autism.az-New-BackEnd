@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIstifadecisTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,12 @@ class CreateIstifadecisTable extends Migration
      */
     public function up()
     {
-        Schema::create('istifadecis', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('email');
+            $table->string('password');
             $table->string('name');
             $table->string('surname');
-            $table->string('email')->unique();
-            $table->string('avatar');
-            $table->integer('gender');
-            $table->integer('user_type');
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateIstifadecisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('istifadecis');
+        Schema::drop('admins');
     }
 }

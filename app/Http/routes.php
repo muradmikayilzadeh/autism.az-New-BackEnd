@@ -38,3 +38,11 @@ if(isset($_SESSION['user'])){
 	Route::post('/changes','userController@saveChanges');
 }
 
+Route::get('/mlgroup',function(){
+		return view('admin.login');
+});
+
+Route::post('/mlgroupcheck','adminController@login');
+// if(isset($_SESSION['admin']){
+// }
+
