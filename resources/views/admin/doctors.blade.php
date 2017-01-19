@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+    <title>Light Bootstrap Dashboard by Creative Tim</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 
@@ -38,7 +38,7 @@
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
 
-    	<div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
                     Creative Tim
@@ -88,14 +88,14 @@
                         <p>Notifications</p>
                     </a>
                 </li>
-				<li class="active-pro">
+                <li class="active-pro">
                     <a href="upgrade.html">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
@@ -183,53 +183,53 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
+                                        <th>Name</th>
+                                        <th>Salary</th>
+                                        <th>Country</th>
+                                        <th>City</th>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
+                                            <td>1</td>
+                                            <td>Dakota Rice</td>
+                                            <td>$36,738</td>
+                                            <td>Niger</td>
+                                            <td>Oud-Turnhout</td>
                                         </tr>
                                         <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
+                                            <td>2</td>
+                                            <td>Minerva Hooper</td>
+                                            <td>$23,789</td>
+                                            <td>Curaçao</td>
+                                            <td>Sinaai-Waas</td>
                                         </tr>
                                         <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
+                                            <td>3</td>
+                                            <td>Sage Rodriguez</td>
+                                            <td>$56,142</td>
+                                            <td>Netherlands</td>
+                                            <td>Baileux</td>
                                         </tr>
                                         <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
+                                            <td>4</td>
+                                            <td>Philip Chaney</td>
+                                            <td>$38,735</td>
+                                            <td>Korea, South</td>
+                                            <td>Overland Park</td>
                                         </tr>
                                         <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
+                                            <td>5</td>
+                                            <td>Doris Greene</td>
+                                            <td>$63,542</td>
+                                            <td>Malawi</td>
+                                            <td>Feldkirchen in Kärnten</td>
                                         </tr>
                                         <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
+                                            <td>6</td>
+                                            <td>Mason Porter</td>
+                                            <td>$78,615</td>
+                                            <td>Chile</td>
+                                            <td>Gloucester</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -249,53 +249,53 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
+                                        <th>Name</th>
+                                        <th>Salary</th>
+                                        <th>Country</th>
+                                        <th>City</th>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
+                                            <td>1</td>
+                                            <td>Dakota Rice</td>
+                                            <td>$36,738</td>
+                                            <td>Niger</td>
+                                            <td>Oud-Turnhout</td>
                                         </tr>
                                         <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
+                                            <td>2</td>
+                                            <td>Minerva Hooper</td>
+                                            <td>$23,789</td>
+                                            <td>Curaçao</td>
+                                            <td>Sinaai-Waas</td>
                                         </tr>
                                         <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
+                                            <td>3</td>
+                                            <td>Sage Rodriguez</td>
+                                            <td>$56,142</td>
+                                            <td>Netherlands</td>
+                                            <td>Baileux</td>
                                         </tr>
                                         <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
+                                            <td>4</td>
+                                            <td>Philip Chaney</td>
+                                            <td>$38,735</td>
+                                            <td>Korea, South</td>
+                                            <td>Overland Park</td>
                                         </tr>
                                         <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
+                                            <td>5</td>
+                                            <td>Doris Greene</td>
+                                            <td>$63,542</td>
+                                            <td>Malawi</td>
+                                            <td>Feldkirchen in Kärnten</td>
                                         </tr>
                                         <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
+                                            <td>6</td>
+                                            <td>Mason Porter</td>
+                                            <td>$78,615</td>
+                                            <td>Chile</td>
+                                            <td>Gloucester</td>
                                         </tr>
                                     </tbody>
                                 </table>

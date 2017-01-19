@@ -43,6 +43,15 @@ Route::get('/mlgroup',function(){
 });
 
 Route::post('/mlgroupcheck','adminController@login');
-// if(isset($_SESSION['admin']){
-// }
+
+if(isset($_SESSION['admin'])){
+	Route::get('/mlgrouppanel',function(){
+		return view('admin.dashboard');
+	});
+	// ---------------------------ADMIN PANEL ROUTES----------------------------------
+	Route::get('/mlgrouppanel-logout','adminController@logout');
+	Route::get('/mlgrouppanel-users','adminController@users');
+	Route::get('/mlgrouppanel-doctors','adminController@doctors');
+	Route::get('/mlgrouppanel-posts','adminController@posts');
+}
 

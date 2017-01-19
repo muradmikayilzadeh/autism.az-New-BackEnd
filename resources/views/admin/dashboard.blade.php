@@ -69,34 +69,11 @@
                         <p>Table List</p>
                     </a>
                 </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
+               
                 <li>
                     <a href="notifications.html">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>
@@ -165,8 +142,8 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                Log out
+                            <a href="{{url('mlgrouppanel-logout')}}">
+                                Çıxış et
                             </a>
                         </li>
                     </ul>

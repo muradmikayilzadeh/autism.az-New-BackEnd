@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\admin;
+use App\istifadeci;
 class adminController extends Controller
 {
  	public function login(Request $request)
@@ -20,8 +21,31 @@ class adminController extends Controller
  			return back()->with('wrong','E-poçt və ya şifrə səhvdir!');
  		}else{
  			$_SESSION['admin']=$admin->id;
-           	return view('admin.dashboard');
+           	return redirect('/mlgrouppanel');
  		}
  		
+ 	}
+ 	// ----------------------ADMIN PANEL FUNCTIONLARI----------------------------------
+ 	public function logout()
+ 	{
+ 		session_destroy();
+        return redirect('/mlgroup');
+ 	}
+
+
+ 	public function users()
+ 	{	
+ 		$users=Istifadeci::all();
+ 		return view('admin.users',compact('users'));
+ 	}
+
+ 	public function doctors()
+ 	{
+ 		return view('admin.doctors');
+ 	}
+
+ 	public function posts()
+ 	{
+ 		return view('admin.doctors');
  	}
 }
