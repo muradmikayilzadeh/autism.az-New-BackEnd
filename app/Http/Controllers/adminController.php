@@ -48,4 +48,28 @@ class adminController extends Controller
  	{
  		return view('admin.doctors');
  	}
+
+ 	public function changeStatus($id)
+ 	{
+ 		$user=Istifadeci::find($id);
+ 		$user->user_type='1';
+ 		$user->save();
+ 		return back();
+ 	}
+
+ 	public function banUser($id)
+ 	{
+ 		$user=Istifadeci::find($id);
+ 		$user->user_type='-1';
+ 		$user->save();
+ 		return back();
+ 	}
+
+ 	public function permitUser($id)
+ 	{
+ 		$user=Istifadeci::find($id);
+ 		$user->user_type='0';
+ 		$user->save();
+ 		return back();
+ 	}
 }

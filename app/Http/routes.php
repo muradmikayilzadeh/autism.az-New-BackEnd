@@ -53,5 +53,9 @@ if(isset($_SESSION['admin'])){
 	Route::get('/mlgrouppanel-users','adminController@users');
 	Route::get('/mlgrouppanel-doctors','adminController@doctors');
 	Route::get('/mlgrouppanel-posts','adminController@posts');
+
+		Route::get('/mlgrouppanel-changestatus/{id}','adminController@changeStatus');
+		Route::get('/mlgrouppanel-banuser/{id}','adminController@banUser');
+		Route::get('/mlgrouppanel-permituser/{id}','adminController@permitUser');
 }
 

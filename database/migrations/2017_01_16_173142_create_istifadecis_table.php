@@ -19,6 +19,7 @@ class CreateIstifadecisTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar');
             $table->integer('gender');
+            $table->integer('about');
             $table->integer('user_type');
             $table->string('password');
             $table->rememberToken();

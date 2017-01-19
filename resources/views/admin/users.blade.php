@@ -46,62 +46,35 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="#" class="simple-text">
+                    autism.az
                 </a>
             </div>
 
             <ul class="nav">
-                <li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="user.html">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
                 <li class="active">
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                    <a href="{{url('/mlgrouppanel')}}">
+                        <p>Lövhə</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="{{url('/mlgrouppanel-users')}}">
+                        <p>İstifadəçilər</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
+                    <a href="{{url('/mlgrouppanel-doctors')}}">
+                        <p>Həkimlər</p>
                     </a>
                 </li>
+               
                 <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="{{url('/mlgrouppanel-posts')}}">
+                        <p>Məqalələr</p>
                     </a>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
@@ -114,60 +87,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Table List</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret"></b>
-                                    <span class="notification">5</span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </li>
-                    </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="">
-                               Account
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Dropdown
-                                    <b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Log out
+                            <a href="{{url('mlgrouppanel-logout')}}">
+                                Çıxış et
                             </a>
                         </li>
                     </ul>
@@ -195,6 +121,7 @@
                                         <th>Cinsiyyət</th>
                                         <th>Növ</th>
                                     	<th>Avatar</th>
+                                        <th>Əməllər</th>
                                     </thead>
                                     <tbody>
                                        @foreach($users as $user)
@@ -211,14 +138,34 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                @if($user->user_type=0)
-                                                    Istifadəçi
-                                                    @else
-                                                    Həkim/Psixoloq
-                                                @endif
+                                                @php
+                                                switch ($user->user_type) {
+                                                    case '-1':
+                                                        echo "Banned";
+                                                        break;
+                                                    
+                                                    case '0':
+                                                        echo "İstifadəçi";
+                                                        break;
+
+                                                    case '1':
+                                                        echo "Həkim/Psixoloq";
+                                                        break;
+                                                }
+                                                @endphp
                                             </td>
                                             <td>
                                                 <img src="{{$user->avatar}}" alt="">
+                                            </td>
+
+                                            <td>
+                                                <a href="{{url('/mlgrouppanel-changestatus',$user->id)}}" class="btn btn-xs btn-default">H</a>
+                                                <a href="{{url('/mlgrouppanel-banuser',$user->id)}}" class="btn btn-xs btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                                <a href="{{url('/mlgrouppanel-permituser',$user->id)}}" class="btn btn-xs btn-success">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                        @endforeach
