@@ -6,6 +6,10 @@
 				margin-top: 50px;
 			}
 		</style>
+
+		@php
+		use App\Istifadeci;
+		@endphp
 @section('content')
 		<section id="banner" class="col-md-12 col-xs-12 col-sm-12">
 			<div class="container">
@@ -85,7 +89,12 @@
 							<h2>{{$post->title}}</h2>
 
 							<i class="fa fa-user"></i>
-							<a href="" class="info"><b>Mary Jane</b></a>
+							<a href="" class="info">
+								@php
+									$user=Istifadeci::find($post->hekim_id);
+									echo '<b>'.$user->name.' '.$user->surname.'</b>';
+								@endphp
+							</a>
 											
 							<i class="fa fa-comment"></i>
 							<a href="" class="info"><b>81 comments</b></a>
@@ -97,56 +106,6 @@
 							<div class="contact pull-right">Read More></div>
 						</div>
 					@endforeach
-
-					<div class="blog col-md-12">
-						<div class="effect">
-							<img src="assets/images/content/bloghome/blogs/blog2.jpg" class="img img-responsive">
-						</div>
-
-						<div class="icon">
-							<i class="fa fa-film"></i>
-							<p>June 17,2015</p>
-						</div>
-
-						<h2>High Quality Daycare</h2>
-
-						<i class="fa fa-user"></i>
-						<a href="" class="info"><b>Mary Jane</b></a>
-										
-						<i class="fa fa-comment"></i>
-						<a href="" class="info"><b>81 comments</b></a>
-
-						<p class="text">
-							Lorem perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero. ipsum dolor sit amet commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						</p>
-
-						<div class="contact pull-right">Read More></div>
-					</div>
-
-					<div class="blog col-md-12">
-						<div class="effect">
-							<img src="assets/images/content/bloghome/blogs/blog3.jpg" class="img img-responsive">
-						</div>
-
-						<div class="icon">
-							<i class="fa fa-file-text-o"></i>
-							<p>June 17,2015</p>
-						</div>
-
-						<h2>High Quality Daycare</h2>
-
-						<i class="fa fa-user"></i>
-						<a href="" class="info"><b>Mary Jane</b></a>
-										
-						<i class="fa fa-comment"></i>
-						<a href="" class="info"><b>81 comments</b></a>
-
-						<p class="text">
-							Lorem perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero. ipsum dolor sit amet commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						</p>
-
-						<div class="contact pull-right">Read More></div>
-					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="about">
