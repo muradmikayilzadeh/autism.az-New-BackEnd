@@ -90,6 +90,63 @@
 				background:#EC9600;
 			}
 		}
+
+		.newPost{
+			h3{
+				font-weight: bold;
+				font-family: 'American';
+				font-size: 40px;
+			}
+			input{
+				height: 45px;
+			}
+			input,textarea{
+				width: 100%;
+				border:1px solid #CECECE;
+				border-radius:15px;
+				padding:5px;
+				font-family: 'Comfortaa';
+				font-size: 17px;
+				box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);
+				margin-top: 20px;
+				&:focus{
+					outline: none;
+				}
+			}
+
+			input[type=file]{
+				display: none;				
+				font-size: 40px;
+			}
+			label{
+				padding:10px;
+				i{
+					font-size: 22px;
+					transition:all .3s ease;
+             		cursor: pointer;
+					&:hover{
+						color:#34327C;
+					}
+				}
+			}
+
+			input[type=submit]{
+				width: 130px;
+				color:white;
+				cursor: pointer;
+				border-radius:355px 45px 225px 75px/15px 225px 15px 255px;
+				font-family: 'Comfortaa';
+				border:none;
+				box-shadow:none;
+				background:#D12881;
+				font-size: 14px;
+				padding:10px;
+				transition: all .2s ease;
+				&:hover{
+					background:#EC9600;
+				}
+			}
+		}
 	}
 
 

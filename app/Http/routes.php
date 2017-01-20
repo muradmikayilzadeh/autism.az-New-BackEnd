@@ -59,3 +59,9 @@ if(isset($_SESSION['admin'])){
 		Route::get('/mlgrouppanel-permituser/{id}','adminController@permitUser');
 }
 
+if(isset($_SESSION['user_type'])){
+	if($_SESSION['user_type']=='1'){
+		Route::post('/newpost','userController@meqaleYaz');
+	}
+}
+

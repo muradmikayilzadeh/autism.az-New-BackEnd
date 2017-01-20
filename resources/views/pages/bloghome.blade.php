@@ -47,7 +47,29 @@
 		<section id="blogs" class="col-md-12 col-sm-12 col-xs-12">
 			<div class="container">
 				<div class="col-md-9">
+					
+					@if($_SESSION['user_type']=='1')
+						<div class="newPost col-md-12">
+							<h3>YENİ MƏQALƏ</h3>
+							<form action="{{url('newpost')}}" method="post" enctype="multipart/form-data">
+								{{csrf_field()}}
+								<input name="title" type="text" placeholder="Başlıq">
+								<textarea name="content" rows="5" class="text" placeholder="Məqaləniz"></textarea>
 
+								<label for="picture">
+									<i class="fa fa-picture-o"></i>
+								</label>
+								<input type="file" id="picture" name="picture">
+
+								<label for="video">
+									<i class="fa fa-video-camera"></i>
+								</label>
+								<input type="file" id="video" name="video">
+
+								<input type="submit" value="Paylaş">
+							</form>
+						</div>
+					@endif
 
 					<div class="blog col-md-12">
 						<div class="effect">

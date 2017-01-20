@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Istifadeci;
-
+use App\Meqale;
 
 class userController extends Controller
 {
@@ -47,11 +47,13 @@ class userController extends Controller
     	if(is_null($user)){
             return back()->with('false','E-poçt və ya şifrə səhvdir!');
     	}else{
-            if(!$user->user_type=="-1"){
-                $_SESSION['user']=$user->id;
-                return back()->with('true','Portala uğurla daxil oldunuz!');
-            }else{
+            if($user->user_type=="-1"){
                 return back()->with('banned','İstifadəçi sistemdən uzaqlaşdırılıb!');
+            }else{
+                $_SESSION['user']=$user->id;
+                $_SESSION['user_type']=$user->user_type;
+
+                return back()->with('true','Portala uğurla daxil oldunuz!');
             }
     	}
     }
@@ -95,5 +97,36 @@ class userController extends Controller
         $user->save();    
 
         return back()->with('changed','Məlumatlarınız uğurla yeniləndi!');
+    }
+
+    // ----------------Meqale functionlar-----------------------------
+    public function meqaleYaz(Request $request)
+    {
+       $new=new Meqale;
+
+       $new->title=$request->title;
+       $new->content=$request->content;
+       $new->hekim_id=$_SESSION['user'];
+
+       if($request->hasFile('picture')){
+           $file=$request->file('picture');
+           $filename=time().'.'.$file->getClientOriginalExtension();
+           $file->move('assets/images/posts',$filename);
+           $path='assets/images/posts/'.$filename;
+           $new->img=$path;
+       }
+
+       // if($request->hasFile('video')){
+       //     $file=$request->file('picture');
+       //     $filename=time().'.'.$file->getClientOriginalExtension();
+       //     $file->move('assets/images/posts',$filename);
+       //     $path='assets/images/posts/'.$filename;
+       //     $new->img=$path;
+       // }
+
+       $new->save();
+
+       return back();
+
     }
 }

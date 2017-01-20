@@ -40,6 +40,10 @@ $headingColor:#D12881;
 	font-style: normal;
 }
 
+input:focus,textarea:focus,select:focus{
+	outline:none;
+}
+
 .pageMsg{
 	background:#34327C;
 	color:white;
