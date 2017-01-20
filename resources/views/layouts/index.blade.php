@@ -60,6 +60,8 @@
 						<input name="email" type="text" class="text" placeholder="E-poçt ünvanınız">
 						<input name="password" type="password" class="text" placeholder="Şifrəniz">
 
+						<textarea name="about" class="text" placeholder="Haqqınızda"></textarea>
+
 						<select name="gender" class="text">
 							<option value="0">Kişi</option>
 							<option value="1">Qadın</option>

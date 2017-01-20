@@ -32,6 +32,7 @@ class userController extends Controller
 	    	}else{
 	    		$new->avatar='assets/images/avatar/female.jpg';
 	    	}
+            $new->about=$request->about;
 	    	$new->save();
 	    	return back()->with('success','Uğurla qeydiyyatdan keçdiniz! Solda yerləşən qırmızı simgəyə çıqqıldadaraq sistemə daxil ola bilərsiniz!');
     	}else{
@@ -76,7 +77,8 @@ class userController extends Controller
         $user=Istifadeci::find($_SESSION['user']);
         $user->name=$request->name;
         $user->surname=$request->surname;
-        $user->password=$request->password;    
+        $user->password=$request->password;   
+        $user->about=$request->about;   
 
         if($request->hasFile('photo')){
             $file=$request->file('photo');

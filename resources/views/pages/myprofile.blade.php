@@ -60,8 +60,9 @@
 							<input type="text" name="name" value="{{$user->name}}" class="text">
 							<input type="text" name="surname" value="{{$user->surname}}" class="text">
 							<input type="password" name="password" value="{{$user->password}}" class="text">
+							<textarea name="about" class="text">{{$user->about}}</textarea>
 							<input type="file" name="photo">
-							<input type="submit" class="contact pull-right" value="Tamamla">
+							<input type="submit" class="contact pull-right" value="Yenilə">
 						</form>
 					</div>
 					
