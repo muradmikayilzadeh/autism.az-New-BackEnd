@@ -116,13 +116,13 @@ class userController extends Controller
            $new->img=$path;
        }
 
-       // if($request->hasFile('video')){
-       //     $file=$request->file('picture');
-       //     $filename=time().'.'.$file->getClientOriginalExtension();
-       //     $file->move('assets/images/posts',$filename);
-       //     $path='assets/images/posts/'.$filename;
-       //     $new->img=$path;
-       // }
+       if($request->hasFile('video')){
+           $file=$request->file('video');
+           $filename=time().'.'.$file->getClientOriginalExtension();
+           $file->move('assets/videos/',$filename);
+           $path='assets/videos/'.$filename;
+           $new->video=$path;
+       }
 
        $new->save();
 

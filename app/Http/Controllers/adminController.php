@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\admin;
+use App\Admin;
 use App\istifadeci;
 class adminController extends Controller
 {
@@ -16,7 +16,7 @@ class adminController extends Controller
                 'password'=>'required',
 
                 ]);
- 		$admin=admin::where([['email',$request->email],['password',$request->password]])->first();
+ 		$admin=Admin::where([['email',$request->email],['password',$request->password]])->first();
  		if(is_null($admin)){
  			return back()->with('wrong','E-poçt və ya şifrə səhvdir!');
  		}else{
