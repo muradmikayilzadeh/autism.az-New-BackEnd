@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Admin;
-use App\istifadeci;
+use App\Istifadeci;
 class adminController extends Controller
 {
  	public function login(Request $request)
