@@ -110,10 +110,10 @@
 			<div class="container text-center">
 				<ul class="float-left col-md-5">
 					<li class="row">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#autism">Services</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#team">Team</a></li>
+						<li><a href="{{url('/')}}">Home</a></li>
+						<li><a href="{{url('/#autism')}}">Services</a></li>
+						<li><a href="{{url('/#about')}}">About</a></li>
+						<li><a href="{{url('/#team')}}">Team</a></li>
 					</li>
 				</ul>
 
@@ -125,24 +125,24 @@
 
 				<ul class="float-right col-md-5">
 					<li class="row">
-						<li><a href="#games">Games</a></li>
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#info">Information</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="{{url('/#games')}}">Games</a></li>
+						<li><a href="{{url('/#blog')}}">Blog</a></li>
+						<li><a href="{{url('/#info')}}">Information</a></li>
+						<li><a href="{{url('/#contact')}}">Contact</a></li>
 					</li>
 				</ul>
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="phoneMenu col-md-10 col-md-offset-1">
 					<ul class="col-md-12">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#autism">Services</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#team">Team</a></li>
-						<li><a href="#games">Games</a></li>
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#info">Information</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="{{url('/')}}">Home</a></li>
+						<li><a href="{{url('/#autism')}}">Services</a></li>
+						<li><a href="{{url('/#about')}}">About</a></li>
+						<li><a href="{{url('/#team')}}">Team</a></li>
+						<li><a href="{{url('/#games')}}">Games</a></li>
+						<li><a href="{{url('/#blog')}}">Blog</a></li>
+						<li><a href="{{url('/#info')}}">Information</a></li>
+						<li><a href="{{url('/#contact')}}">Contact</a></li>
 					</ul>
 			</div>
 		</section>
@@ -200,8 +200,10 @@
 <script>
 	$(document).ready(function (){
 		$('#menu ul li').click(function() { 
-			var target = $(this).find('a').attr('href');
-			$('html, body').animate({scrollTop: $(target).offset().top}, 1000);
+			var target1 = $(this).find('a').attr('href');
+			var maintarget=target1.split('#');
+
+			$('html, body').animate({scrollTop: $("#"+maintarget[1]).offset().top}, 1000);
 		});   
 
 	});
