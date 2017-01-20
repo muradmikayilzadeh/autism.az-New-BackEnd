@@ -114,6 +114,7 @@
                                         <th>Şəkil</th>
                                         <th>Video</th>
                                         <th>Yazılma tarixi</th>
+                                        <th>Status</th>
                                         <th>Əməllər</th>
                                     </thead>
                                     <tbody>
@@ -121,7 +122,7 @@
                                         <tr>
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->title}}</td>      
-                                            <td>{{$post->content}}</td>                   
+                                            <td>{{substr($post->content,0,40).'...'}}</td>                   
                                             <td>{{$post->hekim_id}}</td>                                            
                                             <td>
                                                 @if(!empty($post->img))
@@ -138,13 +139,23 @@
                                                 @endif
                                             </td>
                                             <td>{{$post->created_at}}</td>
-
+                                            <td>
+                                                @if($post->status=='1')
+                                                    :)
+                                                    @else
+                                                    :(
+                                                @endif
+                                            </td>
                                             <td>
                                                 <a href="" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
 
-                                                <a href="" class="btn btn-danger btn-xs">
+                                                <a href="{{url('/mlgrouppanel-permitpost',$post->id)}}" class="btn btn-success btn-xs">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+
+                                                <a href="{{url('/mlgrouppanel-banpost',$post->id)}}" class="btn btn-danger btn-xs">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
                                             </td>                                      

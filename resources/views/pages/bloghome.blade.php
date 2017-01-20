@@ -76,35 +76,37 @@
 					@endif
 					
 					@foreach($posts as $post)
-						<div class="blog col-md-12">
-							<div class="effect">
-								<img src="{{$post->img}}" class="img img-responsive">
+						@if($post->status=='1')
+							<div class="blog col-md-12">
+								<div class="effect">
+									<img src="{{$post->img}}" class="img img-responsive">
+								</div>
+
+								<div class="icon">
+									<i class="fa fa-camera"></i>
+									<p>June 17,2015</p>
+								</div>
+
+								<h2>{{$post->title}}</h2>
+
+								<i class="fa fa-user"></i>
+								<a href="" class="info">
+									@php
+										$user=Istifadeci::find($post->hekim_id);
+										echo '<b>'.$user->name.' '.$user->surname.'</b>';
+									@endphp
+								</a>
+												
+								<i class="fa fa-comment"></i>
+								<a href="" class="info"><b>81 comments</b></a>
+
+								<p class="text">
+									{{$post->content}}
+								</p>
+
+								<div class="contact pull-right">Read More></div>
 							</div>
-
-							<div class="icon">
-								<i class="fa fa-camera"></i>
-								<p>June 17,2015</p>
-							</div>
-
-							<h2>{{$post->title}}</h2>
-
-							<i class="fa fa-user"></i>
-							<a href="" class="info">
-								@php
-									$user=Istifadeci::find($post->hekim_id);
-									echo '<b>'.$user->name.' '.$user->surname.'</b>';
-								@endphp
-							</a>
-											
-							<i class="fa fa-comment"></i>
-							<a href="" class="info"><b>81 comments</b></a>
-
-							<p class="text">
-								{{$post->content}}
-							</p>
-
-							<div class="contact pull-right">Read More></div>
-						</div>
+						@endif
 					@endforeach
 				</div>
 				<div class="col-md-3">

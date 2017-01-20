@@ -123,7 +123,7 @@ class userController extends Controller
            $path='assets/videos/'.$filename;
            $new->video=$path;
        }
-
+       $new->status='1';
        $new->save();
 
        return back();

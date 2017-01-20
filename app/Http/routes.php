@@ -59,6 +59,8 @@ if(isset($_SESSION['admin'])){
 if(isset($_SESSION['user_type'])){
 	if($_SESSION['user_type']=='1'){
 		Route::post('/newpost','userController@meqaleYaz');
+		Route::get('/mlgrouppanel-banpost/{id}','MeqaleController@banPost');
+		Route::get('/mlgrouppanel-permitpost/{id}','MeqaleController@permitPost');
 	}
 }
 

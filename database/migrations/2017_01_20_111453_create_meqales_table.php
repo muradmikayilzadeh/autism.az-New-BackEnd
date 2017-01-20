@@ -19,6 +19,7 @@ class CreateMeqalesTable extends Migration
             $table->integer('hekim_id');
             $table->string('img');
             $table->string('video');
+            $table->integer('status');
             $table->timestamps();
         });
     }

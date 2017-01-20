@@ -14,4 +14,20 @@ class MeqaleController extends Controller
     	$posts=Meqale::all();
     	return view('pages.bloghome',compact('posts'));
     }
+
+    public function banPost($id)
+    {
+    	$post=Meqale::find($id);
+    	$post->status='0';
+    	$post->save();
+    	return back();
+    }
+
+    public function permitPost($id)
+    {
+		$post=Meqale::find($id);
+    	$post->status='1';
+    	$post->save();
+    	return back();
+    }
 }
