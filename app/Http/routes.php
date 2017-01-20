@@ -54,13 +54,15 @@ if(isset($_SESSION['admin'])){
 		Route::get('/mlgrouppanel-changestatus/{id}','adminController@changeStatus');
 		Route::get('/mlgrouppanel-banuser/{id}','adminController@banUser');
 		Route::get('/mlgrouppanel-permituser/{id}','adminController@permitUser');
+
+		Route::get('/mlgrouppanel-banpost/{id}','MeqaleController@banPost');
+		Route::get('/mlgrouppanel-permitpost/{id}','MeqaleController@permitPost');
 }
 
 if(isset($_SESSION['user_type'])){
-	if($_SESSION['user_type']=='1'){
+	if($_SESSION['user_type']=='1' || $_SESSION['user_type']=='0'){
 		Route::post('/newpost','userController@meqaleYaz');
-		Route::get('/mlgrouppanel-banpost/{id}','MeqaleController@banPost');
-		Route::get('/mlgrouppanel-permitpost/{id}','MeqaleController@permitPost');
+		Route::get('/showpost/{id}','userController@showPost');
 	}
 }
 

@@ -11,7 +11,7 @@ class MeqaleController extends Controller
 {
     public function index()
     {
-    	$posts=Meqale::all();
+    	$posts=Meqale::orderBy('created_at','desc')->get();
     	return view('pages.bloghome',compact('posts'));
     }
 

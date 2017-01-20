@@ -129,4 +129,10 @@ class userController extends Controller
        return back();
 
     }
+
+    public function showPost($id)
+    {
+      $post=Meqale::find($id);
+      return view('pages.blogpost',compact('post'));
+    }
 }

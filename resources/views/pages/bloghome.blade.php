@@ -84,10 +84,12 @@
 
 								<div class="icon">
 									<i class="fa fa-camera"></i>
-									<p>June 17,2015</p>
+									<p>{{$post->created_at}}</p>
 								</div>
 
-								<h2>{{$post->title}}</h2>
+								<a href="{{url('showpost',$post->id)}}">
+									<h2>{{$post->title}}</h2>
+								</a>
 
 								<i class="fa fa-user"></i>
 								<a href="" class="info">
@@ -101,10 +103,10 @@
 								<a href="" class="info"><b>81 comments</b></a>
 
 								<p class="text">
-									{{$post->content}}
+									{{substr($post->content,0,200).'...'}}
 								</p>
 
-								<div class="contact pull-right">Read More></div>
+								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center">Ətraflı></a>
 							</div>
 						@endif
 					@endforeach

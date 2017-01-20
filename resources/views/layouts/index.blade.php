@@ -119,7 +119,7 @@
 
 				<div class="logo col-md-2 col-sm-2 col-xs-2 text-center">
 					<div class="row">
-						<img src="assets/images/logo2.png">
+						<img src="{{url('assets/images/logo2.png')}}">
 					</div>
 				</div>
 
@@ -162,7 +162,7 @@
 	         		<button class="subs"><b>SUBSCRIBE</b></button>
 	         	</div>
 	         	<div class="sn col-md-4 text-center">
-	         		<img src="assets/images/logo2.png" alt="">
+	         		<img src="{{url('assets/images/logo2.png')}}" alt="">
 
 	         		<br>
 

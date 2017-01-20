@@ -6,8 +6,11 @@
 			margin-top: 50px;
 		}
 	</style>
-@section('content')
-	
+
+	@php
+	use App\Istifadeci;
+	@endphp
+@section('content')	
 
 		<section id="banner" class="col-md-12 col-xs-12 col-sm-12">
 			<div class="container">
@@ -54,27 +57,27 @@
 
 					<div class="col-md-12">
 						<div class="blog">
-							<h2>High Quality Daycare</h2>
+							<h2>{{$post->title}}</h2>
 							<i class="fa fa-clock-o"></i>
-							<p>Posted on Aug 24, 2015 at 9:00 PM</p>
+							<p>Posted on {{$post->created_at}}</p>
 
 							<i class="fa fa-user"></i>
-							<a href="" class="info"><b>Mary Jane</b></a>
+							<a href="" class="info">
+								@php
+									$user=Istifadeci::find($post->hekim_id);
+									echo '<b>'.$user->name.' '.$user->surname.'</b>';
+								@endphp
+							</a>
 											
 							<i class="fa fa-comment"></i>
 							<a href="" class="info"><b>81 comments</b></a>
 
-							<img src="assets/images/content/bloghome/blogs/blogmain1.jpg" alt="">
+							<img src="../{{$post->img}}" alt="">
 
 
 							<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis tincidunt rhoncus. Integer pulvinar elit ligula, laoreet imperdiet magna consectetur vel. Nullam tempus, tellus sed laoreet porttitor, urna quam efficitur magna, id vestibulum arcu massa eget risus. Mauris sagittis elit nec magna congue aliquam. Nam sollicitudin urna nunc, eu iaculis leo vulputate vel. Donec ultrices ipsum laoreet suscipit consectetur. In pulvinar diam arcu, eu tincidunt arcu mollis quis. Sed vulputate pharetra enim ac pretium. Quisque at rutrum nunc, nec dictum ligula. Vestibulum magna nibh, dapibus at eros et, auctor sagittis ipsum.
+								{{$post->content}}
 							</p>
-
-
-							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!
-
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis tincidunt rhoncus. Integer pulvinar elit ligula, laoreet imperdiet magna consectetur vel. Nullam tempus, tellus sed laoreet porttitor, urna quam efficitur magna, id vestibulum arcu massa eget risus. Mauris sagittis elit nec magna congue aliquam. Nam sollicitudin urna nunc, eu iaculis leo vulputate vel. Donec ultrices ipsum laoreet suscipit consectetur. In pulvinar diam arcu, eu tincidunt arcu mollis quis. Sed vulputate pharetra enim ac pretium. Quisque at rutrum nunc, nec dictum ligula. Vestibulum magna nibh, dapibus at eros et, auctor sagittis ipsum.</p>
 
 
 							<i class="fa fa-tags"></i>
@@ -207,7 +210,7 @@
 
 					<div class="image">
 						<h2>IMAGE</h2>
-						<img src="assets/images/content/bloghome/blogs/imgwidget.jpg" alt="">
+						<img src="{{url('assets/images/content/bloghome/blogs/imgwidget.jpg')}}" alt="">
 					</div>
 
 
