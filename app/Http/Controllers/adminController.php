@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Admin;
 use App\Istifadeci;
+use App\Meqale;
 class adminController extends Controller
 {
  	public function login(Request $request)
@@ -39,14 +40,10 @@ class adminController extends Controller
  		return view('admin.users',compact('users'));
  	}
 
- 	public function doctors()
- 	{
- 		return view('admin.doctors');
- 	}
-
  	public function posts()
  	{
- 		return view('admin.doctors');
+ 		$posts=Meqale::all();
+ 		return view('admin.posts',compact('posts'));
  	}
 
  	public function changeStatus($id)

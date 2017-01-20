@@ -60,13 +60,7 @@
                     <a href="{{url('/mlgrouppanel-users')}}">
                         <p>İstifadəçilər</p>
                     </a>
-                </li>
-                <li>
-                    <a href="{{url('/mlgrouppanel-doctors')}}">
-                        <p>Həkimlər</p>
-                    </a>
-                </li>
-               
+                </li>              
                 <li>
                     <a href="{{url('/mlgrouppanel-posts')}}">
                         <p>Məqalələr</p>

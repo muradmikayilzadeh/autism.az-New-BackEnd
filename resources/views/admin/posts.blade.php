@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+    <title>Light Bootstrap Dashboard by Creative Tim</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-    
+
 
     <!-- Bootstrap core CSS     -->
     <link href="{{url('assets/css/admin/bootstrap.min.css')}}" rel="stylesheet" />
@@ -30,7 +30,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{url('assets/css/admin/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 
-    <style>
+     <style>
         img{
             height: 20px;
         }
@@ -43,8 +43,7 @@
 
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
-
-    	<div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
                     autism.az
@@ -72,7 +71,7 @@
     </div>
 
     <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
+       <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
@@ -102,65 +101,53 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Bütün İstifadəçilər</h4>
-                                <p class="category">Portalı istifadə edən bütün istifadəçilər</p>
+                                <h4 class="title">Bütün Məqalələr</h4>
+                                <p class="category">Portalda yerləşdirilmiş bütün məqalələr</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>ID</th>
-                                    	<th>Ad</th>
-                                    	<th>Soyad</th>
-                                    	<th>E-poçt</th>
-                                        <th>Cinsiyyət</th>
-                                        <th>Növ</th>
-                                    	<th>Avatar</th>
+                                        <th>Başlıq</th>
+                                        <th>Mətn</th>
+                                        <th>Müəllif</th>
+                                        <th>Şəkil</th>
+                                        <th>Video</th>
+                                        <th>Yazılma tarixi</th>
                                         <th>Əməllər</th>
                                     </thead>
                                     <tbody>
-                                       @foreach($users as $user)
+                                       @foreach($posts as $post)
                                         <tr>
-                                            <td>{{$user->id}}</td>
-                                            <td>{{$user->name}}</td>
-                                            <td>{{$user->surname}}</td>
-                                            <td>{{$user->email}}</td>
+                                            <td>{{$post->id}}</td>
+                                            <td>{{$post->title}}</td>      
+                                            <td>{{$post->content}}</td>                   
+                                            <td>{{$post->hekim_id}}</td>                                            
                                             <td>
-                                                @if($user->gender==0)
-                                                    Kişi
+                                                @if(!empty($post->img))
+                                                   <img src="{{$post->img}}" alt="">
                                                     @else
-                                                    Qadın
+                                                    yoxdur
+                                                @endif
+                                            </td>                                            
+                                            <td>
+                                                @if(!empty($post->video))
+
+                                                    @else
+                                                    yoxdur
                                                 @endif
                                             </td>
-                                            <td>
-                                                @php
-                                                switch ($user->user_type) {
-                                                    case '-1':
-                                                        echo "Banned";
-                                                        break;
-                                                    
-                                                    case '0':
-                                                        echo "İstifadəçi";
-                                                        break;
-
-                                                    case '1':
-                                                        echo "Həkim/Psixoloq";
-                                                        break;
-                                                }
-                                                @endphp
-                                            </td>
-                                            <td>
-                                                <img src="{{$user->avatar}}" alt="">
-                                            </td>
+                                            <td>{{$post->created_at}}</td>
 
                                             <td>
-                                                <a href="{{url('/mlgrouppanel-changestatus',$user->id)}}" class="btn btn-xs btn-default">H</a>
-                                                <a href="{{url('/mlgrouppanel-banuser',$user->id)}}" class="btn btn-xs btn-danger">
+                                                <a href="" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+
+                                                <a href="" class="btn btn-danger btn-xs">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
-                                                <a href="{{url('/mlgrouppanel-permituser',$user->id)}}" class="btn btn-xs btn-success">
-                                                    <i class="fa fa-check"></i>
-                                                </a>
-                                            </td>
+                                            </td>                                      
                                         </tr>
                                        @endforeach
                                     </tbody>

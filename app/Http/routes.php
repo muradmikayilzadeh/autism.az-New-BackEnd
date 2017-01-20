@@ -14,9 +14,7 @@ session_start();
 Route::get('/', function () {
     return view('pages.index');
 });
-Route::get('/bloghome', function () {
-    return view('pages.bloghome');
-});
+Route::get('/bloghome','MeqaleController@index');
 
 Route::get('/blogpost', function () {
     return view('pages.blogpost');
@@ -51,7 +49,6 @@ if(isset($_SESSION['admin'])){
 	// ---------------------------ADMIN PANEL ROUTES----------------------------------
 	Route::get('/mlgrouppanel-logout','adminController@logout');
 	Route::get('/mlgrouppanel-users','adminController@users');
-	Route::get('/mlgrouppanel-doctors','adminController@doctors');
 	Route::get('/mlgrouppanel-posts','adminController@posts');
 
 		Route::get('/mlgrouppanel-changestatus/{id}','adminController@changeStatus');
