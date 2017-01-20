@@ -47,8 +47,12 @@ class userController extends Controller
     	if(is_null($user)){
             return back()->with('false','E-poçt və ya şifrə səhvdir!');
     	}else{
-            $_SESSION['user']=$user->id;
-            return back()->with('true','Portala uğurla daxil oldunuz!');
+            if(!$user->user_type=="-1"){
+                $_SESSION['user']=$user->id;
+                return back()->with('true','Portala uğurla daxil oldunuz!');
+            }else{
+                return back()->with('banned','İstifadəçi sistemdən uzaqlaşdırılıb!');
+            }
     	}
     }
 

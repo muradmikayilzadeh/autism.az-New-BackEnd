@@ -95,6 +95,10 @@
 		                 <b>{{ $message }}</b>
 		            @endif
 
+		            @if ($message = Session::get('banned'))
+		                 <b>{{ $message }}</b>
+		            @endif
+
 					@if(true)
 						<b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum modi eligendi sunt quaerat repellendus iure voluptas architecto dolores pariatur a, enim nobis atque facere sint odit aperiam, inventore non ipsam.</b>
 					@endif
