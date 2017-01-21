@@ -11,6 +11,9 @@ class CommentController extends Controller
     public function leaveComment(Request $request,$id)
     {
 
+        $this->validate($request,[
+                'content'=>'required',
+                ]);
     	$new=new Comment;
     	$new->user_id=$_SESSION['user'];
     	$new->post_id=$id;
@@ -21,6 +24,9 @@ class CommentController extends Controller
 
     public function replyComment(Request $request, $id, $ci)
     {
+        $this->validate($request,[
+                'content'=>'required',
+                ]);
         $new= new Comment;
         $new->user_id=$_SESSION['user'];
         $new->post_id=$id;

@@ -103,6 +103,11 @@ class userController extends Controller
     // ----------------Meqale functionlar-----------------------------
     public function meqaleYaz(Request $request)
     {
+
+      $this->validate($request,[
+                'title'=>'required',
+                'content'=>'required',
+                ]);
        $new=new Meqale;
 
        $new->title=$request->title;
