@@ -88,6 +88,9 @@
 							<p class="tag">Concert</p>
 							<p class="tag">Fruit Salad</p>
 							<p class="tag">Soup</p>
+							<br>
+							<a href="{{url('likepost',$post->id)}}" class="fa fa-thumbs-up" style="font-size: 20px;cursor:pointer"></a>
+							<span>{{count($likes)}} nəfər bunu bəyəndi</span>
 						</div>
 
 

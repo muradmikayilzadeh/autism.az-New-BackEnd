@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Istifadeci;
 use App\Meqale;
 use App\Comment;
+use App\Like;
 class userController extends Controller
 {
     public function register(Request $request)
@@ -134,6 +135,24 @@ class userController extends Controller
     {
       $post=Meqale::find($id);
       $comments=Comment::where('post_id',$id)->orderBy('created_at','desc')->get();
-      return view('pages.blogpost',compact('post','comments'));
+
+      $likes=Like::where('post_id',$id)->get();
+      return view('pages.blogpost',compact('post','comments','likes'));
     }
+
+    public function likePost($id)
+    {
+
+        if(!Like::where([['user_id',$_SESSION['user']],['post_id',$id]])->first()){
+            $new=new Like;
+            $new->user_id=$_SESSION['user'];
+            $new->post_id=$id;
+            $new->save();
+            return back();
+          }else{
+            return back();
+          }
+
+    }
+     
 }
