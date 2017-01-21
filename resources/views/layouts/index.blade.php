@@ -119,7 +119,9 @@
 
 				<div class="logo col-md-2 col-sm-2 col-xs-2 text-center">
 					<div class="row">
-						<img src="{{url('assets/images/logo2.png')}}">
+						<a href="{{url('/')}}">
+							<img src="{{url('assets/images/logo2.png')}}">
+						</a>
 					</div>
 				</div>
 
