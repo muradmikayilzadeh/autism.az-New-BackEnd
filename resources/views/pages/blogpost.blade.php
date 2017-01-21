@@ -147,7 +147,7 @@
 											@foreach($replieds as $replied)
 												<div class="nestedComment col-md-10 col-md-offset-2 commentBox">
 													@php
-														$repliedUser=Istifadeci::find($comment->user_id);
+														$repliedUser=Istifadeci::find($replied->user_id);
 													@endphp
 													<div class="col-md-2">
 														<img src="../{{$repliedUser->avatar}}" alt="">
