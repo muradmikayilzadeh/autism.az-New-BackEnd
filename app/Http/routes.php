@@ -57,12 +57,14 @@ if(isset($_SESSION['admin'])){
 
 		Route::get('/mlgrouppanel-banpost/{id}','MeqaleController@banPost');
 		Route::get('/mlgrouppanel-permitpost/{id}','MeqaleController@permitPost');
+		Route::get('/mlgrouppanel-showpost/{id}','MeqaleController@showPost');
 }
 
 if(isset($_SESSION['user_type'])){
 	if($_SESSION['user_type']=='1' || $_SESSION['user_type']=='0'){
 		Route::post('/newpost','userController@meqaleYaz');
 		Route::get('/showpost/{id}','userController@showPost');
+		Route::get('/leavecomment/{id}/{comment}','CommentController@leaveComment');
 	}
 }
 

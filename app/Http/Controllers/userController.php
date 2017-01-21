@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Istifadeci;
 use App\Meqale;
-
+use App\Comment;
 class userController extends Controller
 {
     public function register(Request $request)
@@ -133,6 +133,7 @@ class userController extends Controller
     public function showPost($id)
     {
       $post=Meqale::find($id);
-      return view('pages.blogpost',compact('post'));
+      $comments=Comment::where('post_id',$id)->get();
+      return view('pages.blogpost',compact('post','comments'));
     }
 }

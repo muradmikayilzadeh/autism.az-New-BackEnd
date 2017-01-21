@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Meqale;
+use App\Istifadeci;
 
 class MeqaleController extends Controller
 {
@@ -29,5 +30,12 @@ class MeqaleController extends Controller
     	$post->status='1';
     	$post->save();
     	return back();
+    }
+
+    public function showPost($id)
+    {
+    	$post=Meqale::find($id);
+    	$muellif=Istifadeci::find($post->hekim_id);
+    	return view('admin.user',compact('post','muellif'));
     }
 }

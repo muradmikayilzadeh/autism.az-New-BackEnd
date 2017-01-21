@@ -91,75 +91,53 @@
 
 
 						<div class="leaveComment">
-							<h3>Leave a Comment:</h3>
-							<form action="">
-								<input type="text" placeholder="Name">
-								<input type="text" placeholder="Email ID">
-								<textarea cols="10" rows="8" placeholder="Enter your Comment"></textarea>
-								<input type="submit" class="pull-right contact" value="SEND COMMENT">
-							</form>
+							<h3>Şərh Yaz:</h3>
+
+								<input type="text" id="content" placeholder="Şərhinizi yazın">
+								<a id="send" class="contact pull-right text-center" style="margin-top: 15px">Paylaş</a>
 						</div>
 
+						<script>
+							$(document).ready(function() {
 
+								$('#send')
+								.on('click', function(event) {
+									var value=$('#content').val()
+									$.ajax({
+										url: "/leavecomment/{{$post->id}}/"+value+"",
+										type: 'Get',
+										dataType: 'json',
+										
+									})
+								});
+								
+								
+							});
+						</script>
 						<div class="comments">
-							<h2>COMMENTS</h2>
+							<h2>ŞƏRHLƏR</h2>
 							<hr>
 
-							<div class="commentBox col-md-12">
-								<div class="col-md-2">
-									<img src="assets/images/content/avatars/comment1.jpg" alt="">
-								</div>
-								
-								<div class="col-md-10">
-									<h3>MARIA SILVA</h3>
-									<p class="time">August 25, 2014 at 9:30 PM</p>
-									<p class="text">
-										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-									</p>
-
-									<div class="col-md-12">
-										<a href="" class="reply pull-right">Reply</a>
-									</div>
-								</div>
-							</div>
-
-
-
-							<div class="commentBox col-md-12 col-ms-12 col-xs-12">
-								<div class="col-md-2">
-									<img src="assets/images/content/avatars/comment2.jpg" alt="">
-								</div>
-								
-								<div class="col-md-10">
-									<h3>MARIANE LINDBERG</h3>
-									<p class="time">August 25, 2014 at 9:30 PM</p>
-									<p class="text">
-										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-									</p>
-
-									<div class="col-md-12">
-										<a href="" class="reply pull-right">Reply</a>
-									</div>
-								</div>
-
-								<div class="nestedComment col-md-10 col-md-offset-2 commentBox">
+							@foreach($comments as $comment)
+								<div class="commentBox col-md-12">
+									@php
+										$user=Istifadeci::find($comment->user_id);
+									@endphp
 									<div class="col-md-2">
-										<img src="assets/images/content/avatars/comment3.jpg" alt="">
+										<img src="../{{$user->avatar}}" alt="">
 									</div>
 									
 									<div class="col-md-10">
-										<h3>NESTED COMMENT</h3>
-										<p class="time">August 25, 2014 at 9:30 PM</p>
+										<h3>{{$user->name.' '.$user->surname}}</h3>
+										<p class="time">{{$comment->created_at}}</p>
 										<p class="text">
-											Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+											{{$comment->content}}
 										</p>
 
-										<div class="col-md-12">
-											<a href="" class="reply pull-right">Reply</a>
-										</div>
 									</div>
 								</div>
-							</div>
+							@endforeach
+
 						</div>
 					</div>
 					

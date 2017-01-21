@@ -147,7 +147,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-default btn-xs">
+                                                <a href="{{url('/mlgrouppanel-showpost',$post->id)}}" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
 
