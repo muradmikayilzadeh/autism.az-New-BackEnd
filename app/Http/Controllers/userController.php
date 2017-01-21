@@ -11,6 +11,14 @@ use App\Comment;
 use App\Like;
 class userController extends Controller
 {
+
+    public function index()
+    {
+      $posts=Meqale::orderBy('created_at','desc')->get();
+      return view('pages.index',compact('posts'));
+    }
+
+
     public function register(Request $request)
     {
     	$this->validate($request,[

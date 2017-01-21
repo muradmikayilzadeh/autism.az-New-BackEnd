@@ -11,9 +11,7 @@
 |
 */
 session_start();
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'userController@index');
 Route::get('/bloghome','MeqaleController@index');
 
 Route::get('/blogpost', function () {

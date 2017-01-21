@@ -98,11 +98,7 @@
 		            @if ($message = Session::get('banned'))
 		                 <b>{{ $message }}</b>
 		            @endif
-
-					@if(true)
-						<b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum modi eligendi sunt quaerat repellendus iure voluptas architecto dolores pariatur a, enim nobis atque facere sint odit aperiam, inventore non ipsam.</b>
-					@endif
-
+		            
 				</marquee>
 			</div>
 		</div>
@@ -110,10 +106,9 @@
 			<div class="container text-center">
 				<ul class="float-left col-md-5">
 					<li class="row">
-						<li><a href="{{url('/')}}">Home</a></li>
-						<li><a href="{{url('/#autism')}}">Services</a></li>
-						<li><a href="{{url('/#about')}}">About</a></li>
-						<li><a href="{{url('/#team')}}">Team</a></li>
+						<li><a href="{{url('/#autism')}}">Autizm?</a></li>
+						<li><a href="{{url('/#about')}}">Haqqımızda</a></li>
+						<li><a href="{{url('/#team')}}">Komandamız</a></li>
 					</li>
 				</ul>
 
@@ -127,24 +122,21 @@
 
 				<ul class="float-right col-md-5">
 					<li class="row">
-						<li><a href="{{url('/#games')}}">Games</a></li>
-						<li><a href="{{url('/#blog')}}">Blog</a></li>
-						<li><a href="{{url('/#info')}}">Information</a></li>
-						<li><a href="{{url('/#contact')}}">Contact</a></li>
+						<li><a href="{{url('/#games')}}">Oyunlar</a></li>
+						<li><a href="{{url('/#blog')}}">Məqalələr</a></li>
+						<li><a href="{{url('/#contact')}}">Əlaqə</a></li>
 					</li>
 				</ul>
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="phoneMenu col-md-10 col-md-offset-1">
 					<ul class="col-md-12">
-						<li><a href="{{url('/')}}">Home</a></li>
-						<li><a href="{{url('/#autism')}}">Services</a></li>
-						<li><a href="{{url('/#about')}}">About</a></li>
-						<li><a href="{{url('/#team')}}">Team</a></li>
-						<li><a href="{{url('/#games')}}">Games</a></li>
-						<li><a href="{{url('/#blog')}}">Blog</a></li>
-						<li><a href="{{url('/#info')}}">Information</a></li>
-						<li><a href="{{url('/#contact')}}">Contact</a></li>
+						<li><a href="{{url('/#autism')}}">Autizm?</a></li>
+						<li><a href="{{url('/#about')}}">Haqqımızda</a></li>
+						<li><a href="{{url('/#team')}}">Komandamız</a></li>
+						<li><a href="{{url('/#games')}}">Oyunlar</a></li>
+						<li><a href="{{url('/#blog')}}">Məqalələr</a></li>
+						<li><a href="{{url('/#contact')}}">Əlaqə</a></li>
 					</ul>
 			</div>
 		</section>

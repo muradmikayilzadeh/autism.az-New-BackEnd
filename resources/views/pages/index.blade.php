@@ -23,13 +23,13 @@
 				</div>
 
 				<div class="header-text text-center">
-					<h1><b>QUALITY DAYCARE</b></h1>
+					<h1><b>AUTİSM.AZ</b></h1>
 
 					<p class="text">
-						Alphabet is a Super Fun Daycare / Children HTML Theme including many Elements
+						Azərbaycanda ilk autizm sindromu portalı
 					</p>
 
-					<div class="contact">Contact us</div>
+					<div class="contact">Bizimlə Əlaqə</div>
 				</div>
 			</div>
 
@@ -44,7 +44,8 @@
 
 					<div class="col-md-7 text-center">
 						<h3><b>AUTİZM BARƏDƏ MƏLUMAT</b></h3>
-						<p>Alphabet Daycare will provide a stimulating and safe environment for children ages three months to ten years. Run by a former elementary school educator (Jane Doe), Alphabet Daycare will be the fun, affordable alternative daycare with the best quality you can find in town. We seek to stimulate and develop children’s problem-solving and reactive thinking skills through staff and child directed activities in our daily agenda. Lectus placerat a ultricies a,interdum donec eget metus auguen u Fusce mollis imperdiet interdum donec eget metus auguen Lectus placerat a ultricies a,interdum donec eget metus auguen u Fusce mollis imperdiet interdum donec eget metus auguen unc vel lorem.</p>
+						<p>
+							Autizm-erkən yaş dövründə başlayan, sosial münasibətlər və ünsiyyət sferasında problemlərin olması ilə özünü göstərən ümumi inkişaf problemidir. Autizmin əlamətləri əsasən iki yaşından etibarən özünü göstərməyə başlayır. Autizm-özünə qapanma, real həyatdan uzaqlaşma kimi təzahür edir. Autizm kifayət qədər geniş yayıimış haldır belə ki, təxminən min uşaqdan beş nəfərində müşahidə olunur. Hal-hazırda autizmin yaranmasinin dəqiq səbəbləri məlum deyil. Lakin autizmin nədən yaranmasına fikir bildirən mütəxəssislər belə hesab edirlər ki,autizmin yaranmasi həm irsi, həm də doğuşdan əvvəlki, doğuş zamanı və sonradan qazanılmış bir sıra inkişafa təsiredici faktorlarla, hamiləlik zamanı baş verən narahatlıqlar,eləce də uşaqlıqda edilən peyvəndlərlə əlaqədar ola bilər. Müasir tədqiqatlara əsasən autizmi əsəb sisteminin patologiyası ilə əlaqələndirirlər.</p>
 					</div>
 
 					<div class="col-md-5">
@@ -104,7 +105,7 @@
 				<div class="container">
 					<div class="col-md-5 col-md-offset-1 text-center">
 						<h2>HƏDƏFİMİZ AYDINLIQDIR!</h2>
-						<p class="text">Lotam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi Suspendisse a elementum anteu imperdiet et maecenas eu eros non nibh aliquet iaculis..</p>
+						<p class="text">autism.az portalı olaraq hədəfimiz autizm sindromlu uşaqların düzgün müalicə tərzini insanlara aşılamaqdır. Portalda olan psixoloqlar müalicənin ən düzgün yolu ilə sizi tanış edəcəklər.</p>
 						<button class="contactButton">Əlaqə</button>
 					</div>
 					
@@ -350,34 +351,50 @@
 					<h2>MƏQALƏLƏR</h2>
 				</div>
 
-				<div class="blog-panel col-md-12 row text-center">
+				<ul class="blog-panel row text-center col-md-12">
 					<div class="button prev text-center"><i class="fa fa-angle-left"></i></div>
 					<div class="button next text-center"><i class="fa fa-angle-right"></i></div>
 					
-					<div class="bPanel col-md-4">
+					
+					{{-- <li class="bPanel">
 						<div class="bCard col-md-12">
 							<div class="row">
-								<img src="assets/images/content/b1.jpg" alt="">
-								<div class="bText">
-									<a href="" style="text-decoration: none"><h3>NEW CLASSROOM</h3></a>
-									<i class="fa fa-clock-o"></i>
-									<span>Aug 24, 2015 at 9:00 PM</span>
-
-									<br>
-
-									<i class="fa fa-user"></i>
-									<a href="" class="info"><b>Mary Jane</b></a>
-										
-									<i class="fa fa-comment"></i>
-									<a href="" class="info"><b>81 comments</b></a>
-
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
-								</div>
-								<div class="contact"><b>Read More</b></div>
+								<img src="assets/images/content/b2.jpg" alt="">
 							</div>
-						</div>
-					</div>
-					<div class="bPanel col-md-4 sonraki">
+						</div>						
+					</li> --}}
+
+
+					@foreach($posts as $post)
+						<li class="bPanel">
+							<div class="bCard col-md-12">
+								<div class="row">
+									<img src="assets/images/content/b2.jpg" alt="">
+									<div class="bText">
+										<a href="" style="text-decoration: none"><h3>MOTHER'S DAY</h3></a>
+										<i class="fa fa-clock-o"></i>
+										<span>Aug 24, 2015 at 9:00 PM</span>
+
+										<br>
+
+										<i class="fa fa-user"></i>
+										<a href="" class="info"><b>Mary Jane</b></a>
+											
+										<i class="fa fa-comment"></i>
+										<a href="" class="info"><b>81 comments</b></a>
+
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
+									</div>
+									<div class="contact"><b>Read More</b></div>
+								</div>
+							</div>
+						</li>
+					@endforeach
+
+
+
+
+					{{-- <div class="bPanel col-md-4 sonraki">
 						<div class="bCard col-md-12">
 							<div class="row">
 								<img src="assets/images/content/b2.jpg" alt="">
@@ -422,11 +439,11 @@
 								<div class="contact"><b>Read More</b></div>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="circle"></div>
 					<div class="circle"></div>
-				</div>
+				</ul>
 			</div>
 		</section>
 
