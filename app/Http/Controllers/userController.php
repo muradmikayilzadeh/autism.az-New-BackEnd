@@ -69,7 +69,8 @@ class userController extends Controller
     public function myProfile()
     {
         $user=Istifadeci::find($_SESSION['user']);
-        return view('pages.myprofile',compact('user'));
+        $posts=Meqale::where('hekim_id',$_SESSION['user'])->orderBy('created_at','desc')->get();
+        return view('pages.myprofile',compact('user','posts'));
     }
 
 

@@ -60,7 +60,7 @@
 						<div class="blog">
 							<h2>{{$post->title}}</h2>
 							<i class="fa fa-clock-o"></i>
-							<p>Posted on {{$post->created_at}}</p>
+							<p>{{$post->created_at}} tarixində paylaşıldı</p>
 
 							<i class="fa fa-user"></i>
 							<a href="" class="info">

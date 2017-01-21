@@ -2,6 +2,9 @@
 
 	<link rel="stylesheet" href="{{url('assets/css/bloghome.css')}}">
 	<link rel="stylesheet" href="{{url('assets/css/blogpost.css')}}">
+	@php
+	use App\Istifadeci;
+	@endphp
 @section('content')
 	
 		<section id="banner" class="col-md-12 col-xs-12 col-sm-12">
@@ -54,7 +57,7 @@
 					
 
 
-					<div class="leaveComment">
+					<div class="leaveComment col-md-12">
 						<form action="{{url('changes')}}" enctype="multipart/form-data" method="post">
 							{{ csrf_field() }}
 							<input type="text" name="name" value="{{$user->name}}" class="text">
@@ -64,7 +67,46 @@
 							<input type="file" name="photo">
 							<input type="submit" class="contact pull-right" value="Yenilə">
 						</form>
+
 					</div>
+
+					<div class="col-md-12" style="border:none">
+						<h2>MƏQALƏLƏRİM</h2>
+					</div>
+
+					@foreach($posts as $post)
+						@if($post->status=='1')
+							<div class="blog col-md-12">
+								<div class="effect">
+									<img src="{{$post->img}}" class="img img-responsive">
+								</div>
+
+								<div class="icon">
+									<i class="fa fa-camera"></i>
+									<p style="color:white">{{$post->created_at}}</p>
+								</div>
+
+								<a href="{{url('showpost',$post->id)}}">
+									<h2>{{$post->title}}</h2>
+								</a>
+
+								<i class="fa fa-user"></i>
+								<a href="" class="info">
+									@php
+										$user=Istifadeci::find($post->hekim_id);
+										echo '<b>'.$user->name.' '.$user->surname.'</b>';
+									@endphp
+								</a>
+												
+
+								<p class="text">
+									{{substr($post->content,0,200).'...'}}
+								</p>
+
+								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center">Ətraflı></a>
+							</div>
+						@endif
+					@endforeach
 					
 				</div>
 				<div class="col-md-3">
@@ -158,6 +200,28 @@
 				</div>
 			</div>
 		</section>
+
+		<script>
+			$(document).ready(function() {
+				$('.effect')
+				.on('mouseover', function(event) {
+					$(this).find('img').css({
+						opacity: '.7',
+						transform: 'scale(1.2)'
+					});;
+				});
+
+
+
+				$('.effect')
+				.on('mouseleave', function(event) {
+					$(this).find('img').css({
+						opacity: '1',
+						transform: 'scale(1)'
+					});;
+				});
+			});
+		</script>
 		<script src="{{url('assets/js/slider.js')}}"></script>
 		<script src="{{url('assets/js/menu.js')}}"></script>
 		<script src="{{url('assets/js/accordion.js')}}"></script>
