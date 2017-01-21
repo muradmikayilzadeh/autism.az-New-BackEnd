@@ -99,8 +99,6 @@
 									@endphp
 								</a>
 												
-								<i class="fa fa-comment"></i>
-								<a href="" class="info"><b>81 comments</b></a>
 
 								<p class="text">
 									{{substr($post->content,0,200).'...'}}

@@ -133,7 +133,7 @@ class userController extends Controller
     public function showPost($id)
     {
       $post=Meqale::find($id);
-      $comments=Comment::where('post_id',$id)->get();
+      $comments=Comment::where('post_id',$id)->orderBy('created_at','desc')->get();
       return view('pages.blogpost',compact('post','comments'));
     }
 }

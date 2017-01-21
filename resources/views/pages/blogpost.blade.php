@@ -9,6 +9,7 @@
 
 	@php
 	use App\Istifadeci;
+	use App\Comment;
 	@endphp
 @section('content')	
 
@@ -70,7 +71,7 @@
 							</a>
 											
 							<i class="fa fa-comment"></i>
-							<a href="" class="info"><b>81 comments</b></a>
+							<a href="" class="info"><b>{{count($comments)}} şərh</b></a>
 
 							<img src="../{{$post->img}}" alt="">
 
@@ -93,49 +94,81 @@
 						<div class="leaveComment">
 							<h3>Şərh Yaz:</h3>
 
-								<input type="text" id="content" placeholder="Şərhinizi yazın">
-								<a id="send" class="contact pull-right text-center" style="margin-top: 15px">Paylaş</a>
+								<form action="{{url('/leavecomment',$post->id)}}" method="post">
+									{{csrf_field()}}
+									<input type="text" name="content" placeholder="Şərhinizi yazın">
+								
+									<input type="submit" value="Paylaş" class="contact pull-right">
+								</form>
 						</div>
 
-						<script>
-							$(document).ready(function() {
 
-								$('#send')
-								.on('click', function(event) {
-									var value=$('#content').val()
-									$.ajax({
-										url: "/leavecomment/{{$post->id}}/"+value+"",
-										type: 'Get',
-										dataType: 'json',
-										
-									})
-								});
-								
-								
-							});
-						</script>
 						<div class="comments">
 							<h2>ŞƏRHLƏR</h2>
 							<hr>
 
 							@foreach($comments as $comment)
-								<div class="commentBox col-md-12">
-									@php
-										$user=Istifadeci::find($comment->user_id);
-									@endphp
-									<div class="col-md-2">
-										<img src="../{{$user->avatar}}" alt="">
-									</div>
-									
-									<div class="col-md-10">
-										<h3>{{$user->name.' '.$user->surname}}</h3>
-										<p class="time">{{$comment->created_at}}</p>
-										<p class="text">
-											{{$comment->content}}
-										</p>
+								@if($comment->replied_id==0)
+						
+									<div class="commentBox col-md-12">
+										@php
+											$user=Istifadeci::find($comment->user_id);
+										@endphp
+										<div class="col-md-2">
+											<img src="../{{$user->avatar}}" alt="">
+										</div>
+										
+										<div class="col-md-10">
+											<h3>{{$user->name.' '.$user->surname}}</h3>
+											<p class="time">{{$comment->created_at}}</p>
+											<p class="text">
+												{{$comment->content}}
+											</p>
+											
+											<div class="col-md-12">
+												<div style="margin-bottom: 30px" class="reply text-center pull-right">Cavabla</div>
+												
+												<form action="{{url('replycomment'.'/'.$post->id,$comment->id)}}" method="post">
+													{{csrf_field()}}
+													<input type="text" class="replyForm" name="content">
+												</form>
+												<script>
+													$('.reply')
+													.on('click',function(event) {
+														$('.replyForm').css('display', 'block');
+													});
+												</script>
+											</div>
 
+											@php
+												$replieds=Comment::where('replied_id',$comment->id)->get();
+											@endphp
+
+											@foreach($replieds as $replied)
+												<div class="nestedComment col-md-10 col-md-offset-2 commentBox">
+													@php
+														$repliedUser=Istifadeci::find($comment->user_id);
+													@endphp
+													<div class="col-md-2">
+														<img src="../{{$repliedUser->avatar}}" alt="">
+													</div>
+													
+													<div class="col-md-10" style="padding-left: 40px">
+														<h3>{{$repliedUser->name.' '.$repliedUser->surname}}</h3>
+														<p class="time">{{$replied->created_at}}</p>
+														<p class="text">
+															{{$replied->content}}
+														</p>
+													</div>
+												</div>
+											@endforeach
+
+										</div>
+
+										
 									</div>
-								</div>
+
+								@endif
 							@endforeach
 
 						</div>

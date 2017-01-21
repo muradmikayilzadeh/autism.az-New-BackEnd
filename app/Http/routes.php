@@ -64,7 +64,8 @@ if(isset($_SESSION['user_type'])){
 	if($_SESSION['user_type']=='1' || $_SESSION['user_type']=='0'){
 		Route::post('/newpost','userController@meqaleYaz');
 		Route::get('/showpost/{id}','userController@showPost');
-		Route::get('/leavecomment/{id}/{comment}','CommentController@leaveComment');
+		Route::post('/leavecomment/{id}','CommentController@leaveComment');
+		Route::post('/replycomment/{id}/{ci}','CommentController@replyComment');
 	}
 }
 

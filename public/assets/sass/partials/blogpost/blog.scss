@@ -157,6 +157,21 @@
 							background:#EC9600;
 						}
 					}
+
+					input,textarea{
+						width: 100%;
+						display: none;
+						border:1px solid #CECECE;
+						border-radius:15px;
+						padding:5px;
+						font-family: 'Comfortaa';
+						font-size: 17px;
+						box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);
+						margin-top: 20px;
+						&:focus{
+							border-radius:15px;
+						}
+					}
 			   }
 			}
 
