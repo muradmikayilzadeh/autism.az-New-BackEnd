@@ -19,6 +19,17 @@ class userController extends Controller
     }
 
 
+    public function blogHome()
+    {
+      if(isset($_SESSION['user_type'])){
+        $posts=Meqale::orderBy('created_at','desc')->get();
+        return view('pages.bloghome',compact('posts'));
+      }else{
+        return back()->with('login','Məqalələri görmək üçün qeydiyyatdan keçin. Əgər artıq hesabınız varsa, solda yerləşən qırmızı simgəyə çıqqıldadaraq portala daxil olun');
+      }
+    }
+
+
     public function register(Request $request)
     {
     	$this->validate($request,[

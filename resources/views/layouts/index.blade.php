@@ -98,6 +98,10 @@
 		            @if ($message = Session::get('banned'))
 		                 <b>{{ $message }}</b>
 		            @endif
+
+		            @if ($message = Session::get('login'))
+		                 <b>{{ $message }}</b>
+		            @endif
 		            
 				</marquee>
 			</div>

@@ -7,6 +7,24 @@
 		margin-bottom:100px;
 		display: block;
 
+
+		.contact{
+			width: 111px;
+			color:white;
+			margin:auto;
+			cursor: pointer;
+			border-radius:355px 45px 225px 75px/15px 225px 15px 255px;
+			font-family: 'Comfortaa';
+			border:none;
+			background:#D12881;
+			font-size: 17px;
+			padding:10px;
+			transition: all .2s ease;
+			&:hover{
+				background:#EC9600;
+			}
+		}	
+
 		
 		.button{
 			background:#D12881;
@@ -113,22 +131,6 @@
 						color:#7A7878;
 						font-family: 'Comfortaa';
 						font-size: 16px;
-					}
-				}
-				.contact{
-					width: 111px;
-					color:white;
-					margin:auto;
-					cursor: pointer;
-					border-radius:355px 45px 225px 75px/15px 225px 15px 255px;
-					font-family: 'Comfortaa';
-					border:none;
-					background:#D12881;
-					font-size: 17px;
-					padding:10px;
-					transition: all .2s ease;
-					&:hover{
-						background:#EC9600;
 					}
 				}
 			}

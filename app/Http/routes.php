@@ -12,11 +12,12 @@
 */
 session_start();
 Route::get('/', 'userController@index');
-Route::get('/bloghome','MeqaleController@index');
 
-Route::get('/blogpost', function () {
-    return view('pages.blogpost');
+Route::get('/bloghome','userController@blogHome');
+Route::get('/oyun1',function(){
+	return view('games.oyun1');
 });
+
 
 Route::get('/myprofile', function () {
     return view('pages.myprofile');

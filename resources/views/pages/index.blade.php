@@ -392,6 +392,9 @@
 					@endforeach
 
 
+					<a href="{{url('/bloghome')}}" class="contact">Bütün məqalələr</a>
+
+
 
 
 					{{-- <div class="bPanel col-md-4 sonraki">
