@@ -29,7 +29,7 @@
 						Azərbaycanda ilk autizm sindromu portalı
 					</p>
 
-					<div class="contact">Bizimlə Əlaqə</div>
+					<div class="contact">Əlaqə</div>
 				</div>
 			</div>
 

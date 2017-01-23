@@ -31,67 +31,165 @@
 		h1{
 			font-family: 'American';
 			font-weight: 600;
-			position: absolute;
+			
 			transition: all .6s ease;
 			background:white;
 			color:#EC9600;
+			display: block;
 			padding:10px;
-			top:100px;
-			transform: translateX(-500px);
+			
+			
 		}
+			.basliq{
+				position: absolute;
+				top:100px;
+				transform: translateX(-500px);
+			}
 		.shert{
 			font-family: 'Comfortaa';
 			font-size: 20px;
-			transform: translateY(-500px) translateX(-100px);
-			transition: all .6s ease;
+			position:absolute;
+			top:-80px;
 			left: 50px;
-
+			transition: all .6s ease;
 		}
-		.element{
-			height: 100px;
-			position: absolute;
-			top:200px;
+
+		.score{
+			font-family: 'American';
+			font-size:60px;
+			position:absolute;
+			right: 80px;
+			bottom:20px;
 			display: none;
-			transition: all .4s ease;
+			color:white;
 		}
 
-				// Xiyarlar
-				.xiyarEvvel{
-					left: 30px;
-					height: 60px;
-				}
+		.element{
+			padding:10px;
+			display: none;
+			margin-top: 200px;
+			position:absolute;
+			height: 130px;
+		}
+			.gm{
+				left: 100px;
+			}
+			.sm{
+				left: 300px;
+			}
+			.qm{
+				left: 500px;
+			}
 
-				.xiyarSonra{
-					right: 100px;
-					top:50px;
-				}
+		img{
+			transition: all .5s ease;
+		}
 
-				// Qarpizlar
-				.qarpizEvvel{
-					left: 300px;
-					top:140px;
-				}
+		// Sual02
+		.gt,.yt,.bt{
+			display: none;
+		}
+			.gt{
+				left: 100px;
+			}
+			.yt{
 
-				.qarpizSonra{
-					right: 100px;
-					top:250px;
-				}
+				left: 400px;
+			}
+			.bt{
+				left: 550px;
+			}
+		
+		// Sual03
+		.sa,.ya,.qa{
+			display: none;
+		}
+			.sa{
+				left: 100px;
+			}
+			.ya{
 
-				// Almalar
-				.almaEvvel{
-					left: 200px;
-					top:300px;
-				}
+				left: 300px;
+			}
+			.qa{
+				left: 550px;
+			}
 
-				// Tortlar
-				.tortEvvel{
-					left: 500px;
-					top:300px;
-				}
 
-				.tortSonra{
-					right: 300px;
-					top:70px;
-				}
+		// Sual04
+		.qk,.gk,.ck{
+			display: none;
+		}
+			.qk{
+				left: 130px;
+			}
+			.gk{
+
+				left: 330px;
+			}
+			.ck{
+				left: 580px;
+			}
+
+
+		// Sual05
+		.qke,.cke,.bke{
+			display: none;
+		}
+			.qke{
+				left: 130px;
+			}
+			.bke{
+
+				left: 330px;
+			}
+			.cke{
+				left: 580px;
+			}
+
+
+		// Sual06
+		.qq,.qiq,.gq{
+			display: none;
+		}
+			.qq{
+				left: 130px;
+			}
+			.qiq{
+
+				left: 330px;
+			}
+			.gq{
+				left: 580px;
+			}
+
+
+		// Sual07
+		.gma,.qma,.yma{
+			display: none;
+		}
+			.gma{
+				left: 130px;
+			}
+			.qma{
+
+				left: 330px;
+			}
+			.yma{
+				left: 580px;
+			}
+
+
+
+		.aferin{
+			width: 100%;
+			color:#EC9600;
+			font-family: 'American';
+			font-size: 130px;
+			transform:translateY(100px);
+			z-index: 99;
+			transition: all .5s ease;
+			display: none;
+		}
 	}
 }

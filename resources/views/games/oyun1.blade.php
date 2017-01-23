@@ -2,6 +2,7 @@
 		<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
 		<link rel="stylesheet" href="{{url('assets/css/bloghome.css')}}">
 		<link rel="stylesheet" href="{{url('assets/css/games/oyun1/oyun1.css')}}">
+
 		<style>
 			#footer{
 				margin-top: 50px;
@@ -49,7 +50,7 @@
 		<section id="blogs" class="col-md-12 col-sm-12 col-xs-12">
 			<div class="container">
 				<div class="col-md-9">
-					<h2>Oyun 01</h2>
+					<h2>RƏNGİ TAP</h2>
 
 					<section id="game" class="text-center"> 
 
@@ -59,18 +60,51 @@
 						<button class="start">Başla</button>
 
 						{{-- Starta kliklemeden sonra --}}
-						<h1 class="basliq">ƏVVƏLİ VƏ SONRASI</h1>
-						<p class="shert">Dostum, əvvəli və sonrası verilmiş şəkilləri qruplaşdır!</p>
-
-						<img src="{{url('assets/images/games/oyun01/cucumberBefore.png')}}" class="element xiyarEvvel birinci">
-						<img src="{{url('assets/images/games/oyun01/cucumberAfter.png')}}" class="element xiyarSonra birinci">
-						<img src="{{url('assets/images/games/oyun01/appleAfter.png')}}" class="element almaSonra">
-						<img src="{{url('assets/images/games/oyun01/appleBefore.png')}}" class="element almaEvvel birinci">
-						<img src="{{url('assets/images/games/oyun01/watermelonBefore.png')}}" class="element qarpizEvvel birinci">
-						<img src="{{url('assets/images/games/oyun01/watermelonAfter.png')}}" class="element qarpizSonra birinci">
-						<img src="{{url('assets/images/games/oyun01/cakeBefore.png')}}" class="element tortEvvel birinci">
-						<img src="{{url('assets/images/games/oyun01/cakeAfter.png')}}" class="element tortSonra birinci">
+						<h1 class="basliq">RƏNGİ TAP</h1>
+						<p class="shert">Hansı göy rəngli maşındır?</p>				
 						
+						<p class="score">0</p>
+						{{-- Sual01 --}}
+						<img src="{{url('assets/images/games/oyun01/blueCar.png')}}" class="element gm">
+						<img src="{{url('assets/images/games/oyun01/redCar.png')}}" class="element qm">
+						<img src="{{url('assets/images/games/oyun01/yellowCar.png')}}" class="element sm">
+
+						{{-- Sual02 --}}
+						<img src="{{url('assets/images/games/oyun01/bluePlane.png')}}" class="element gt">
+						<img src="{{url('assets/images/games/oyun01/grayPlane.png')}}" class="element bt">
+						<img src="{{url('assets/images/games/oyun01/greenPlane.png')}}" class="element yt">
+
+						{{-- Sual03 --}}
+						<img src="{{url('assets/images/games/oyun01/yellowApple.png')}}" class="element sa">
+						<img src="{{url('assets/images/games/oyun01/greenApple.png')}}" class="element ya">
+						<img src="{{url('assets/images/games/oyun01/redApple.png')}}" class="element qa">
+
+						{{-- Sual04 --}}
+						<img src="{{url('assets/images/games/oyun01/blackShirt.png')}}" class="element qk">
+						<img src="{{url('assets/images/games/oyun01/blueShirt.png')}}" class="element gk">
+						<img src="{{url('assets/images/games/oyun01/pinkShirt.png')}}" class="element ck">
+
+						{{-- Sual05 --}}
+						<img src="{{url('assets/images/games/oyun01/pinkButterfly.png')}}" class="element cke">
+						<img src="{{url('assets/images/games/oyun01/redButterfly.png')}}" class="element qke">
+						<img src="{{url('assets/images/games/oyun01/violetButterfly.png')}}" class="element bke">
+
+						{{-- Sual06 --}}
+						<img src="{{url('assets/images/games/oyun01/blackScissors.png')}}" class="element qq">
+						<img src="{{url('assets/images/games/oyun01/redScissors.png')}}" class="element qiq">
+						<img src="{{url('assets/images/games/oyun01/blueScissors.png')}}" class="element gq">
+
+
+						{{-- Sual07 --}}
+						<img src="{{url('assets/images/games/oyun01/blueTable.png')}}" class="element gma">
+						<img src="{{url('assets/images/games/oyun01/redTable.png')}}" class="element qma">
+						<img src="{{url('assets/images/games/oyun01/greenTable.png')}}" class="element yma">
+
+
+
+						<h1 class="aferin">
+							AFƏRİN
+						</h1>
 
 
 					</section>
