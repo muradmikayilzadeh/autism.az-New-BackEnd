@@ -142,7 +142,7 @@ $(document).ready(function() {
 		$('.score').text(score)
 		$('.qma,.yma,.gma').hide('400')
 
-		$('.aferin').show('500');
+		$('.aferin').css('display', 'block');;
 
 
 	});
