@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMeqalesTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,10 @@ class CreateMeqalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('meqales', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('content');
-            $table->integer('hekim_id');
-            $table->string('img');
-            $table->string('video');
-            $table->integer('tag');
-            $table->integer('status');
+            $table->string('name');
+            $table->text('about');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateMeqalesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('meqales');
+        Schema::drop('tags');
     }
 }

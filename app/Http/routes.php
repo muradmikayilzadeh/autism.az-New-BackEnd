@@ -41,6 +41,8 @@ Route::get('/mlgroup',function(){
 
 Route::post('/mlgroupcheck','adminController@login');
 
+
+
 if(isset($_SESSION['admin'])){
 	Route::get('/mlgrouppanel',function(){
 		return view('admin.dashboard');
@@ -59,6 +61,8 @@ if(isset($_SESSION['admin'])){
 		Route::get('/mlgrouppanel-showpost/{id}','MeqaleController@showPost');
 }
 
+
+
 if(isset($_SESSION['user_type'])){
 	if($_SESSION['user_type']=='1' || $_SESSION['user_type']=='0'){
 		Route::post('/newpost','userController@meqaleYaz');
@@ -66,6 +70,7 @@ if(isset($_SESSION['user_type'])){
 		Route::get('/likepost/{id}','userController@likePost');
 		Route::post('/leavecomment/{id}','CommentController@leaveComment');
 		Route::post('/replycomment/{id}/{ci}','CommentController@replyComment');
+		Route::get('/deletecomment/{id}','CommentController@deleteComment');
 	}
 }
 

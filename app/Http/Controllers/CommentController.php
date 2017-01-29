@@ -35,4 +35,17 @@ class CommentController extends Controller
         $new->save();
         return back();
     }
+
+
+    public function deleteComment($id)
+    {
+       $replieds=Comment::where('replied_id',$id)->get();
+       foreach($replieds as $replied){
+            $replied->delete();
+       }
+
+       $comment=Comment::find($id);
+       $comment->delete();
+       return back();
+    }
 }

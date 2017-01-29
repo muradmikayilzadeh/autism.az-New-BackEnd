@@ -65,11 +65,6 @@
 								</label>
 								<input type="file" id="picture" name="picture">
 
-								<label for="video">
-									<i class="fa fa-video-camera"></i>
-								</label>
-								<input type="file" id="video" name="video">
-
 								<input type="submit" value="Paylaş">
 							</form>
 						</div>

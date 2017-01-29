@@ -114,6 +114,9 @@
 								@if($comment->replied_id==0)
 						
 									<div class="commentBox col-md-12">
+										@if($comment->user_id==$_SESSION['user'])
+											<a href="{{url('deletecomment',$comment->id)}}" class="fa fa-close pull-right"></a>
+										@endif
 										@php
 											$user=Istifadeci::find($comment->user_id);
 										@endphp
@@ -149,6 +152,9 @@
 
 											@foreach($replieds as $replied)
 												<div class="nestedComment col-md-10 col-md-offset-2 commentBox">
+												@if($replied->user_id==$_SESSION['user'])
+													<a href="{{url('deletecomment',$replied->id)}}" class="fa fa-close pull-right"></a>
+												@endif
 													@php
 														$repliedUser=Istifadeci::find($replied->user_id);
 													@endphp
