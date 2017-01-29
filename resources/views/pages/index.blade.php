@@ -350,21 +350,11 @@
 				<div class="heading">
 					<h2>MƏQALƏLƏR</h2>
 				</div>
+					
 
+			<div class="button prev text-center"><i class="fa fa-angle-left"></i></div>
+				
 				<ul class="blog-panel row text-center col-md-12">
-					<div class="button prev text-center"><i class="fa fa-angle-left"></i></div>
-					<div class="button next text-center"><i class="fa fa-angle-right"></i></div>
-					
-					
-					{{-- <li class="bPanel">
-						<div class="bCard col-md-12">
-							<div class="row">
-								<img src="assets/images/content/b2.jpg" alt="">
-							</div>
-						</div>						
-					</li> --}}
-
-
 					@foreach($posts as $post)
 						<li class="bPanel">
 							<div class="bCard col-md-12">
@@ -390,63 +380,12 @@
 							</div>
 						</li>
 					@endforeach
-
-
+			
 					<a href="{{url('/bloghome')}}" class="contact">Bütün məqalələr</a>
-
-
-
-
-					{{-- <div class="bPanel col-md-4 sonraki">
-						<div class="bCard col-md-12">
-							<div class="row">
-								<img src="assets/images/content/b2.jpg" alt="">
-								<div class="bText">
-									<a href="" style="text-decoration: none"><h3>MOTHER'S DAY</h3></a>
-									<i class="fa fa-clock-o"></i>
-									<span>Aug 24, 2015 at 9:00 PM</span>
-
-									<br>
-
-									<i class="fa fa-user"></i>
-									<a href="" class="info"><b>Mary Jane</b></a>
-										
-									<i class="fa fa-comment"></i>
-									<a href="" class="info"><b>81 comments</b></a>
-
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
-								</div>
-								<div class="contact"><b>Read More</b></div>
-							</div>
-						</div>
-					</div>
-					<div class="bPanel col-md-4 sonraki">
-						<div class="bCard col-md-12">
-							<div class="row">
-								<img src="assets/images/content/b3.jpg" alt="">
-								<div class="bText">
-									<a href="" style="text-decoration: none"><h3>PAINTING CLASS</h3></a>
-									<i class="fa fa-clock-o"></i>
-									<span>Aug 24, 2015 at 9:00 PM</span>
-
-									<br>
-
-									<i class="fa fa-user"></i>
-									<a href="" class="info"><b>Mary Jane</b></a>
-										
-									<i class="fa fa-comment"></i>
-									<a href="" class="info"><b>81 comments</b></a>
-
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
-								</div>
-								<div class="contact"><b>Read More</b></div>
-							</div>
-						</div>
-					</div> --}}
-
-					<div class="circle"></div>
-					<div class="circle"></div>
 				</ul>
+
+			<div class="button next text-center"><i class="fa fa-angle-right"></i></div>
+
 			</div>
 		</section>
 
