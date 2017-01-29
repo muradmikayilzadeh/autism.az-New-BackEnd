@@ -103,7 +103,7 @@
 									{{substr($post->content,0,200).'...'}}
 								</p>
 
-								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center">Ətraflı></a>
+								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center"><b>Ətraflı</b></a>
 							</div>
 						@endif
 					@endforeach

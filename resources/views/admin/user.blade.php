@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+    @php
+    use App\Tag;
+    @endphp
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -93,6 +96,10 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">{{$post->title}}</h4>
+                                @php
+                                    $tag=Tag::find($post->tag);
+                                    echo $tag->name;
+                                @endphp
                                 <p>{{$post->content}}</p>
 
                                 <img src="../{{$post->img}}" style="height: 350px">

@@ -10,6 +10,7 @@
 	@php
 	use App\Istifadeci;
 	use App\Comment;
+	use App\Tag;
 	@endphp
 @section('content')	
 
@@ -82,12 +83,15 @@
 
 
 							<i class="fa fa-tags"></i>
-							<p>Tags:</p>
+							<p>Mövzu:</p>
 
-							<p class="tag">Bread</p>
-							<p class="tag">Concert</p>
-							<p class="tag">Fruit Salad</p>
-							<p class="tag">Soup</p>
+							<p class="tag">
+								@php
+									$tag=Tag::find($post->tag);
+									echo $tag->name;
+								@endphp
+							</p>
+							
 							<br>
 							<a href="{{url('likepost',$post->id)}}" class="fa fa-thumbs-up" style="font-size: 20px;cursor:pointer"></a>
 							<span>{{count($likes)}} nəfər bunu bəyəndi</span>

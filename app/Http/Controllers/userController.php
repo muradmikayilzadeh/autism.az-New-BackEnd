@@ -9,6 +9,7 @@ use App\Istifadeci;
 use App\Meqale;
 use App\Comment;
 use App\Like;
+use App\Tag;
 class userController extends Controller
 {
 
@@ -23,7 +24,8 @@ class userController extends Controller
     {
       if(isset($_SESSION['user_type'])){
         $posts=Meqale::orderBy('created_at','desc')->get();
-        return view('pages.bloghome',compact('posts'));
+        $tags=Tag::all();
+        return view('pages.bloghome',compact('posts','tags'));
       }else{
         return back()->with('login','Məqalələri görmək üçün qeydiyyatdan keçin. Əgər artıq hesabınız varsa, solda yerləşən qırmızı simgəyə çıqqıldadaraq portala daxil olun');
       }
@@ -150,6 +152,7 @@ class userController extends Controller
            $new->video=$path;
        }
        $new->status='1';
+       $new->tag=$request->tag;
        $new->save();
 
        return back();

@@ -58,8 +58,16 @@
 							<form action="{{url('newpost')}}" method="post" enctype="multipart/form-data">
 								{{csrf_field()}}
 								<input name="title" type="text" placeholder="Başlıq">
-								<textarea name="content" rows="5" class="text" placeholder="Məqaləniz"></textarea>
+								
+								<select name="tag">
+									<option value="0">Mövzu seçin</option>
+									@foreach($tags as $tag)
+										<option value="{{$tag->id}}">{{$tag->name}}</option>
+									@endforeach
+								</select>
 
+								<textarea name="content" rows="5" class="text" placeholder="Məqaləniz"></textarea>
+								
 								<label for="picture">
 									<i class="fa fa-picture-o"></i>
 								</label>
@@ -99,7 +107,7 @@
 									{{substr($post->content,0,200).'...'}}
 								</p>
 
-								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center">Ətraflı></a>
+								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center"><b>Ətraflı</b></a>
 							</div>
 						@endif
 					@endforeach
@@ -194,16 +202,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
-		<div class="pagination col-md-12 col-sm-12 col-xs-12">
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
-			<span>4</span>
-			<span>5</span>
-		</div>
-		
+		</section>		
 		<script>
 			$(document).ready(function() {
 				$('.effect')

@@ -2,6 +2,7 @@
 @section('content')
 	@php
 		use App\Istifadeci;
+		use App\Tag;
 	@endphp
 		<section id="slider" class="col-md-12 col-xs-12 col-sm-12">
 			<div class="row">	
@@ -365,7 +366,14 @@
 										<a href="" style="text-decoration: none"><h3>{{$post->title}}</h3></a>
 										<i class="fa fa-clock-o"></i>
 										<span>{{$post->created_at }}</span>
-
+										<br>
+										<i class="fa fa-tag"></i>
+										<span>
+											@php
+												$tag=Tag::find($post->tag);
+												echo $tag->name;
+											@endphp
+										</span>
 										<br>
 		
 										<i class="fa fa-user"></i>
@@ -375,9 +383,11 @@
 												echo '<b>'.$user->name.' '.$user->surname.'</b>';
 											@endphp
 										</b></a>
+
+
 											
 
-										<p>{{substr($post->content,0,250)}}</p>
+										<p>{{substr($post->content,0,150)}}</p>
 									</div>
 									<a href="{{url('showpost',$post->id)}}" class="contact"><b>Ətraflı</b></a>
 								</div>
