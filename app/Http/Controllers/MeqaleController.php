@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Meqale;
 use App\Istifadeci;
+use App\Tag;
 
 class MeqaleController extends Controller
 {
@@ -37,5 +38,25 @@ class MeqaleController extends Controller
     	$post=Meqale::find($id);
     	$muellif=Istifadeci::find($post->hekim_id);
     	return view('admin.user',compact('post','muellif'));
+    }
+
+    public function tags()
+    {
+        $tags=Tag::all();
+        return view('admin.tags',compact('tags'));
+    }
+
+    public function addTag(Request $request)
+    {
+        $this->validate($request,[
+                'name'=>'required',
+                'about'=>'required',
+                ]);
+        $new=new Tag;
+        $new->name=$request->name;
+        $new->about=$request->about;
+        $new->save();
+        
+        return back();
     }
 }

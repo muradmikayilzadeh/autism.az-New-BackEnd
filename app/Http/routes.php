@@ -59,6 +59,9 @@ if(isset($_SESSION['admin'])){
 		Route::get('/mlgrouppanel-banpost/{id}','MeqaleController@banPost');
 		Route::get('/mlgrouppanel-permitpost/{id}','MeqaleController@permitPost');
 		Route::get('/mlgrouppanel-showpost/{id}','MeqaleController@showPost');
+
+		Route::get('/mlgrouppanel-tags','MeqaleController@tags');
+		Route::post('/mlgrouppanel-addtag','MeqaleController@addTag');
 }
 
 

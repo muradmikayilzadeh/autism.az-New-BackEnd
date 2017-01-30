@@ -9,6 +9,7 @@
 
 		@php
 		use App\Istifadeci;
+		use App\Tag;
 		@endphp
 @section('content')
 		<section id="banner" class="col-md-12 col-xs-12 col-sm-12">
@@ -101,6 +102,14 @@
 										echo '<b>'.$user->name.' '.$user->surname.'</b>';
 									@endphp
 								</a>
+
+								<i class="fa fa-tag"></i>
+								<span>
+									@php
+										$tag=Tag::find($post->tag);
+										echo $tag->name;
+									@endphp
+								</span>
 												
 
 								<p class="text">
@@ -163,14 +172,10 @@
 
 
 					<div class="tags">
-						<h2>TAGS</h2>
-						<p class="tag">Daycare</p>
-						<p class="tag">Concert</p>
-						<p class="tag">Father's day</p>
-						<p class="tag">Fun</p>
-						<p class="tag">Activity</p>
-						<p class="tag">Toys</p>
-						<p class="tag">Offer</p>
+						<h2>ETİKETLƏR</h2>
+						@foreach($tags as $tag)
+							<p class="tag">{{$tag->name}}</p>
+						@endforeach
 					</div>
 
 

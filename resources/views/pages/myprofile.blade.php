@@ -160,14 +160,10 @@
 
 
 					<div class="tags">
-						<h2>TAGS</h2>
-						<p class="tag">Daycare</p>
-						<p class="tag">Concert</p>
-						<p class="tag">Father's day</p>
-						<p class="tag">Fun</p>
-						<p class="tag">Activity</p>
-						<p class="tag">Toys</p>
-						<p class="tag">Offer</p>
+						<h2>ETİKETLƏR</h2>
+						@foreach($tags as $tag)
+							<p class="tag">{{$tag->name}}</p>
+						@endforeach
 					</div>
 
 

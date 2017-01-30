@@ -90,8 +90,9 @@ class userController extends Controller
     public function myProfile()
     {
         $user=Istifadeci::find($_SESSION['user']);
+        $tags=Tag::all();
         $posts=Meqale::where('hekim_id',$_SESSION['user'])->orderBy('created_at','desc')->get();
-        return view('pages.myprofile',compact('user','posts'));
+        return view('pages.myprofile',compact('user','posts','tags'));
     }
 
 
@@ -163,9 +164,9 @@ class userController extends Controller
     {
       $post=Meqale::find($id);
       $comments=Comment::where('post_id',$id)->orderBy('created_at','desc')->get();
-
+      $tags=Tag::all();
       $likes=Like::where('post_id',$id)->get();
-      return view('pages.blogpost',compact('post','comments','likes'));
+      return view('pages.blogpost',compact('post','comments','likes','tags'));
     }
 
     public function likePost($id)

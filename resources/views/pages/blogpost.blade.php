@@ -203,33 +203,7 @@
 					</div>
 
 
-					<div class="search">
-						<h2>Search</h2>
-						<input type="text" class="textInput">
-	         			<button class="subs"><b><i class="fa fa-search"></i></b></button>
-					</div>
 
-
-					<div class="categories">
-						<h2>CATEGORIES</h2>
-						<ul>
-							<div class="row">
-								<li>Parent's Book</li>
-								<li>Events and News</li>
-								<li>Teachers</li>
-								<li>Updates</li>
-							</div>
-						</ul>
-					</div>
-
-
-					<div class="widget">
-						<h2>TEXT WIDGET</h2>
-
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.
-						</p>
-					</div>
 
 
 					<div class="image">
@@ -239,14 +213,10 @@
 
 
 					<div class="tags">
-						<h2>TAGS</h2>
-						<p class="tag">Daycare</p>
-						<p class="tag">Concert</p>
-						<p class="tag">Father's day</p>
-						<p class="tag">Fun</p>
-						<p class="tag">Activity</p>
-						<p class="tag">Toys</p>
-						<p class="tag">Offer</p>
+						<h2>ETİKETLƏR</h2>
+						@foreach($tags as $tag)
+							<p class="tag">{{$tag->name}}</p>
+						@endforeach
 					</div>
 
 

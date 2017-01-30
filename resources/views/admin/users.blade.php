@@ -67,6 +67,11 @@
                         <p>Məqalələr</p>
                     </a>
                 </li>
+                 <li>
+                    <a href="{{url('/mlgrouppanel-tags')}}">
+                        <p>Etiketlər</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
