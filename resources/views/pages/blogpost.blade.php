@@ -93,7 +93,7 @@
 							</p>
 							
 							<br>
-							<a href="{{url('likepost',$post->id)}}" class="fa fa-thumbs-up" style="font-size: 20px;cursor:pointer"></a>
+							<a href="{{url('likepost',$post->id)}}" class="fa fa-thumbs-up like" style="font-size: 20px;cursor:pointer"></a>
 							<span>{{count($likes)}} nəfər bunu bəyəndi</span>
 						</div>
 
