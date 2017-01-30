@@ -445,11 +445,12 @@
 					<div class="col-md-7 text-center">
 						<h3>WRITE US</h3>
 
-						<form action="">
-							<input type="text" class="text" style="margin-top: 0" placeholder="Name">
-							<input type="text" class="text" placeholder="Email ID">
-							<input type="text" class="text" placeholder="Subject">
-							<textarea name="" id="" cols="10" rows="6" placeholder="Enter your message"></textarea>
+						<form action="{{url('sendmail')}}" method="post">
+							{{csrf_field()}}
+							<input name="ad" type="text" class="text" style="margin-top: 0" placeholder="Name">
+							<input name="email" type="text" class="text" placeholder="Email ID">
+							<input name="subject" type="text" class="text" placeholder="Subject">
+							<textarea name="content" id="" cols="10" rows="6" placeholder="Enter your message"></textarea>
 							<input type="submit" class="send" value="Göndər">
 						</form>
 					</div>

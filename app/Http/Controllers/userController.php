@@ -13,6 +13,18 @@ use App\Tag;
 class userController extends Controller
 {
 
+    public function sendMail(Request $request)
+    {
+      $to      = 'm.murad@code.edu.az';
+      $subject = 'Autism.az';
+      $message = $request->content;
+      $headers = 'From: '.$request->email. "\r\n" .
+          'Reply-To: '.$request->email. "\r\n" .
+          'X-Mailer: PHP/' . phpversion();
+
+      mail($to, $subject, $message, $headers);
+    }
+
     public function index()
     {
       $posts=Meqale::orderBy('created_at','desc')->get();
