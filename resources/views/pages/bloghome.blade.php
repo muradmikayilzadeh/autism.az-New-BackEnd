@@ -61,7 +61,6 @@
 								<input name="title" type="text" placeholder="Başlıq">
 								
 								<select name="tag">
-									<option value="0">Mövzu seçin</option>
 									@foreach($tags as $tag)
 										<option value="{{$tag->id}}">{{$tag->name}}</option>
 									@endforeach
