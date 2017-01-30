@@ -307,43 +307,9 @@
 						<h2>İNTERAKTİV OYUNLAR</h2>
 					</div>
 
-					<div class="img">
+					<a class="img" href="{{url('oyun1')}}">
 						<img src="assets/images/content/games/game1.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game2.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game1.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game2.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game1.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game2.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game1.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game2.jpg" class="img img-responsive">
-					</div>
-
-					<div class="img">
-						<img src="assets/images/content/games/game1.jpg" class="img img-responsive">
-					</div>
-					</div>
-
+					</a>
 				</div>
 			</div>
 		</section>
@@ -377,7 +343,7 @@
 										<br>
 		
 										<i class="fa fa-user"></i>
-										<a href="" class="info"><b>
+										<a href="{{url('profile',$post->hekim_id)}}" class="info"><b>
 											@php
 												$user=Istifadeci::find($post->hekim_id);
 												echo '<b>'.$user->name.' '.$user->surname.'</b>';

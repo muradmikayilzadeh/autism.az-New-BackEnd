@@ -22,7 +22,8 @@ class userController extends Controller
           'Reply-To: '.$request->email. "\r\n" .
           'X-Mailer: PHP/' . phpversion();
 
-      mail($to, $subject, $message, $headers);
+      var_dump(mail($to, $subject, $message, $headers));
+      return back();
     }
 
     public function index()
@@ -105,6 +106,15 @@ class userController extends Controller
         $tags=Tag::all();
         $posts=Meqale::where('hekim_id',$_SESSION['user'])->orderBy('created_at','desc')->get();
         return view('pages.myprofile',compact('user','posts','tags'));
+    }
+
+
+    public function profile($id)
+    {
+        $user=Istifadeci::find($id);
+        $tags=Tag::all();
+        $posts=Meqale::where('hekim_id',$id)->orderBy('created_at','desc')->get();
+        return view('pages.profile',compact('user','posts','tags'));
     }
 
 

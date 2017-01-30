@@ -33,6 +33,7 @@ Route::post('/sendmail','userController@sendMail');
 
 if(isset($_SESSION['user'])){
 	Route::get('/myprofile','userController@myProfile');
+	Route::get('/profile/{id}','userController@profile');
 	Route::post('/changes','userController@saveChanges');
 }
 

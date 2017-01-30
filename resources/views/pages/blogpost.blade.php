@@ -64,7 +64,7 @@
 							<p>{{$post->created_at}} tarixində paylaşıldı</p>
 
 							<i class="fa fa-user"></i>
-							<a href="" class="info">
+							<a href="{{url('profile',$post->hekim_id)}}" class="info">
 								@php
 									$user=Istifadeci::find($post->hekim_id);
 									echo '<b>'.$user->name.' '.$user->surname.'</b>';

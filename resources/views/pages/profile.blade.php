@@ -1,22 +1,19 @@
 @extends('layouts.index')
-		<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
-		<link rel="stylesheet" href="{{url('assets/css/bloghome.css')}}">
-		<link rel="stylesheet" href="{{url('assets/css/games/oyun1/oyun1.css')}}">
 
-		<style>
-			#footer{
-				margin-top: 50px;
-			}
-		</style>
-
+	<link rel="stylesheet" href="{{url('assets/css/bloghome.css')}}">
+	<link rel="stylesheet" href="{{url('assets/css/blogpost.css')}}">
+	@php
+	use App\Istifadeci;
+	@endphp
 @section('content')
+	
 		<section id="banner" class="col-md-12 col-xs-12 col-sm-12">
 			<div class="container">
-				<h1>OYUN</h1>
+				<h1>PROFİLİM</h1>
 				<div class="pages">
-					<a href="{{url('/')}}">Ana səhifə</a>
+					<a href="{{url('/')}}">Home</a>
 					<span> / </span>
-					<p>Oyunlar</p>
+					<p>Profilim</p>
 				</div>
 			</div>
 			<div class="row">
@@ -47,69 +44,66 @@
 				</div>
 		</section>
 
+
+
 		<section id="blogs" class="col-md-12 col-sm-12 col-xs-12">
 			<div class="container">
-				<div class="col-md-9">
-					<h2>RƏNGİ TAP</h2>
+				<div class="col-md-9 text-center">
 
-					<section id="game" class="text-center"> 
-
-						{{-- Start of Game --}}
-						<img src="{{url('assets/images/logo2.png')}}" class="oyunLogo">
-						<br><br>
-						<button class="start">Başla</button>
-
-						{{-- Starta kliklemeden sonra --}}
-						<h1 class="basliq">RƏNGİ TAP</h1>
-						<p class="shert">Hansı göy rəngli maşındır?</p>				
-						
-						<p class="score">0</p>
-						{{-- Sual01 --}}
-						<img src="{{url('assets/images/games/oyun01/blueCar.png')}}" class="element gm">
-						<img src="{{url('assets/images/games/oyun01/redCar.png')}}" class="element qm">
-						<img src="{{url('assets/images/games/oyun01/yellowCar.png')}}" class="element sm">
-
-						{{-- Sual02 --}}
-						<img src="{{url('assets/images/games/oyun01/bluePlane.png')}}" class="element gt">
-						<img src="{{url('assets/images/games/oyun01/grayPlane.png')}}" class="element bt">
-						<img src="{{url('assets/images/games/oyun01/greenPlane.png')}}" class="element yt">
-
-						{{-- Sual03 --}}
-						<img src="{{url('assets/images/games/oyun01/yellowApple.png')}}" class="element sa">
-						<img src="{{url('assets/images/games/oyun01/greenApple.png')}}" class="element ya">
-						<img src="{{url('assets/images/games/oyun01/redApple.png')}}" class="element qa">
-
-						{{-- Sual04 --}}
-						<img src="{{url('assets/images/games/oyun01/blackShirt.png')}}" class="element qk">
-						<img src="{{url('assets/images/games/oyun01/blueShirt.png')}}" class="element gk">
-						<img src="{{url('assets/images/games/oyun01/pinkShirt.png')}}" class="element ck">
-
-						{{-- Sual05 --}}
-						<img src="{{url('assets/images/games/oyun01/pinkButterfly.png')}}" class="element cke">
-						<img src="{{url('assets/images/games/oyun01/redButterfly.png')}}" class="element qke">
-						<img src="{{url('assets/images/games/oyun01/violetButterfly.png')}}" class="element bke">
-
-						{{-- Sual06 --}}
-						<img src="{{url('assets/images/games/oyun01/blackScissors.png')}}" class="element qq">
-						<img src="{{url('assets/images/games/oyun01/redScissors.png')}}" class="element qiq">
-						<img src="{{url('assets/images/games/oyun01/blueScissors.png')}}" class="element gq">
+					<h2>PROFİL</h2>
 
 
-						{{-- Sual07 --}}
-						<img src="{{url('assets/images/games/oyun01/blueTable.png')}}" class="element gma">
-						<img src="{{url('assets/images/games/oyun01/redTable.png')}}" class="element qma">
-						<img src="{{url('assets/images/games/oyun01/greenTable.png')}}" class="element yma">
+					<img src="../{{$user->avatar}}" class="img img-circle" style="height: 200px; width: 200px; box-shadow:6px 6px 0px rgba(103, 102, 102, 0.2);">
+					
 
 
+					<h2>{{$user->name.' '.$user->surname}}</h2>
+					<p>
+						Psixoloq
+					</p>
 
-						<h1 class="aferin">
-							AFƏRİN
-						</h1>
+					<p class="text">
+						{{$user->about}}
+					</p>
 
+					<div class="col-md-12" style="border:none">
+						<h2>MƏQALƏLƏR</h2>
+					</div>
 
-					</section>
+					@foreach($posts as $post)
+						@if($post->status=='1')
+							<div class="blog col-md-12">
+								<div class="effect">
+									<img src="{{$post->img}}" class="img img-responsive">
+								</div>
 
+								<div class="icon">
+									<i class="fa fa-camera"></i>
+									<p style="color:white">{{$post->created_at}}</p>
+								</div>
 
+								<a href="{{url('showpost',$post->id)}}">
+									<h2>{{$post->title}}</h2>
+								</a>
+
+								<i class="fa fa-user"></i>
+								<a href="{{url('profile',$post->hekim_id)}}" class="info">
+									@php
+										$user=Istifadeci::find($post->hekim_id);
+										echo '<b>'.$user->name.' '.$user->surname.'</b>';
+									@endphp
+								</a>
+												
+
+								<p class="text">
+									{{substr($post->content,0,200).'...'}}
+								</p>
+
+								<a href="{{url('showpost',$post->id)}}" class="contact pull-right text-center"><b>Ətraflı</b></a>
+							</div>
+						@endif
+					@endforeach
+					
 				</div>
 				<div class="col-md-3">
 					<div class="about">
@@ -126,10 +120,20 @@
 					</div>
 
 
+
 					<div class="image">
 						<h2>IMAGE</h2>
-						<img src="assets/images/content/bloghome/blogs/imgwidget.jpg" alt="">
+						<img src="../assets/images/content/bloghome/blogs/imgwidget.jpg" alt="">
 					</div>
+
+
+					<div class="tags">
+						<h2>ETİKETLƏR</h2>
+						@foreach($tags as $tag)
+							<p class="tag">{{$tag->name}}</p>
+						@endforeach
+					</div>
+
 
 					<div class="accordion">
 						<h2>ACCORDION</h2>
@@ -160,7 +164,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<script>
 			$(document).ready(function() {
 				$('.effect')
@@ -182,10 +186,7 @@
 				});
 			});
 		</script>
-
 		<script src="{{url('assets/js/slider.js')}}"></script>
 		<script src="{{url('assets/js/menu.js')}}"></script>
 		<script src="{{url('assets/js/accordion.js')}}"></script>
-
-		<script src="{{url('assets/js/games/01.js')}}"></script>
 @stop
