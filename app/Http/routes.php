@@ -28,7 +28,7 @@ Route::get('/myprofile', function () {
 Route::post('/register','userController@register');
 Route::post('/login','userController@login');
 Route::get('/logout','userController@logout');
-Route::post('/sendmail','userController@send');
+Route::post('/sendmail','userController@sendMail');
 
 
 if(isset($_SESSION['user'])){

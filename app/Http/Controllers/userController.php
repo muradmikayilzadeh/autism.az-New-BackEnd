@@ -16,7 +16,7 @@ class userController extends Controller
     public function sendMail(Request $request)
     {
       $to      = 'm.murad@code.edu.az';
-      $subject = 'Autism.az';
+      $subject = $request->subject;
       $message = $request->content;
       $headers = 'From: '.$request->email. "\r\n" .
           'Reply-To: '.$request->email. "\r\n" .
