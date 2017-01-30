@@ -124,34 +124,6 @@
 					</div>
 
 
-					<div class="search">
-						<h2>Search</h2>
-						<input type="text" class="textInput">
-	         			<button class="subs"><b><i class="fa fa-search"></i></b></button>
-					</div>
-
-
-					<div class="categories">
-						<h2>CATEGORIES</h2>
-						<ul>
-							<div class="row">
-								<li>Parent's Book</li>
-								<li>Events and News</li>
-								<li>Teachers</li>
-								<li>Updates</li>
-							</div>
-						</ul>
-					</div>
-
-
-					<div class="widget">
-						<h2>TEXT WIDGET</h2>
-
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.
-						</p>
-					</div>
-
 
 					<div class="image">
 						<h2>IMAGE</h2>
