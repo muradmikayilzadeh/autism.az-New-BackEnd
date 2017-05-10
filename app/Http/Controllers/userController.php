@@ -59,9 +59,16 @@ class userController extends Controller
 	    	$new->name=$request->name;
 	    	$new->surname=$request->surname;
 	    	$new->email=$request->email;
-	    	$new->password=$request->password;
+
+        // Hash password
+        $md5=md5($request->password);
+
+
+	    	$new->password=md5($md5);
             $new->gender=$request->gender;
 	    	$new->user_type='0';
+
+        // Avatar
 	    	if($request->gender==0){
 	    		$new->avatar='assets/images/avatar/male.jpg';
 	    	}else{
@@ -69,16 +76,18 @@ class userController extends Controller
 	    	}
             $new->about=$request->about;
 	    	$new->save();
-	    	return back()->with('success','Uğurla qeydiyyatdan keçdiniz! Solda yerləşən qırmızı simgəyə çıqqıldadaraq sistemə daxil ola bilərsiniz!');
+	    	return back()->with('success','Uğurla qeydiyyatdan keçdiniz! Solda yerləşən qırmızı simgəyə çıqqıldadaraq sistemə daxil ola bilərsiniz!');//ugurlu
     	}else{
-    		return back()->with('unsuccess','E-poçt ünvanı ilə artıq qeydiyyatdan keçilib! Qeydiyyat uğursuzdur.');
+    		return back()->with('unsuccess','E-poçt ünvanı ilə artıq qeydiyyatdan keçilib! Qeydiyyat uğursuzdur.');//ugursuz
     	}
     }
 
     public function login(Request $request)
     {
 
-    	$user=Istifadeci::where([['email',$request->email],['password',$request->password]])->first();
+      $md5=md5($request->password);
+
+    	$user=Istifadeci::where([['email',$request->email],['password',md5($md5)]])->first();
     	if(is_null($user)){
             return back()->with('false','E-poçt və ya şifrə səhvdir!');
     	}else{
